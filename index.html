@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Bruno Savarella — λ</title>
-  <meta name="description" content="Bruno Savarella: DJ, programador y obsesivo del software. Córdoba, Argentina. Una carta de presentación en una terminal, con un tema de house escrito en JavaScript.">
+  <meta name="description" content="Bruno Savarella: DJ, programador y obsesivo del software. Córdoba, Argentina. Proyectos, servicios y contacto, con un tema de house escrito en JavaScript.">
   <meta name="author" content="Bruno Savarella">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Bruno Savarella — DJ · programador · software">
-  <meta property="og:description" content="Una carta de presentación en una terminal. La música que suena está escrita en código.">
+  <meta property="og:description" content="Software, seguridad y música. La música que suena en la página está escrita en código.">
   <meta property="og:url" content="https://brun02005.github.io/">
   <meta property="og:image" content="https://brun02005.github.io/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -23,18 +23,18 @@
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,600;0,800;1,400&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #000; --bar: #0a0a0a; --fg: #f2f2f2; --dim: #8c8c8c; --faint: #3a3a3a; --border: #222;
+      --bg: #000; --bar: #0a0a0a; --card: #0d0d0d; --fg: #f2f2f2; --dim: #8c8c8c; --faint: #3a3a3a; --border: #222;
       --inv-bg: #f2f2f2; --inv-fg: #000;
       --mono: "JetBrains Mono", ui-monospace, Consolas, "Courier New", monospace;
     }
     @media (prefers-color-scheme: light) {
       :root:not([data-theme="dark"]) {
-        --bg: #fff; --bar: #f4f4f4; --fg: #0d0d0d; --dim: #6b6b6b; --faint: #c8c8c8; --border: #e2e2e2;
+        --bg: #fff; --bar: #f4f4f4; --card: #fafafa; --fg: #0d0d0d; --dim: #6b6b6b; --faint: #c8c8c8; --border: #e2e2e2;
         --inv-bg: #0d0d0d; --inv-fg: #fff;
       }
     }
     :root[data-theme="light"] {
-      --bg: #fff; --bar: #f4f4f4; --fg: #0d0d0d; --dim: #6b6b6b; --faint: #c8c8c8; --border: #e2e2e2;
+      --bg: #fff; --bar: #f4f4f4; --card: #fafafa; --fg: #0d0d0d; --dim: #6b6b6b; --faint: #c8c8c8; --border: #e2e2e2;
       --inv-bg: #0d0d0d; --inv-fg: #fff;
     }
 
@@ -55,7 +55,7 @@
       transition: opacity .7s ease, visibility .7s;
     }
     #gate.gone { opacity: 0; visibility: hidden; }
-    .lambda { width: 132px; height: 132px; margin: 0 auto 28px; }
+    .lambda { width: 120px; height: 120px; margin: 0 auto 28px; }
     .lambda circle { stroke-dasharray: 360; stroke-dashoffset: 360; animation: draw 1.6s .2s ease-out forwards; }
     .lambda path { stroke-dasharray: 120; stroke-dashoffset: 120; animation: draw 1s 1.2s ease-out forwards; }
     @keyframes draw { to { stroke-dashoffset: 0; } }
@@ -70,17 +70,6 @@
     .quiet { background: none; border: 0; color: var(--dim); cursor: pointer; letter-spacing: .1em; font-size: 13px; text-decoration: underline; text-underline-offset: 3px; }
     .quiet:hover { color: var(--fg); }
     #gate .note { margin-top: 34px; color: var(--faint); font-size: 12px; letter-spacing: .1em; }
-
-    /* ================= TARJETA DE CAPÍTULO ================= */
-    #chapter {
-      position: fixed; inset: 0; z-index: 20; display: grid; place-items: center; text-align: center;
-      background: color-mix(in srgb, var(--bg) 88%, transparent); pointer-events: none;
-      opacity: 0; transition: opacity .45s ease; padding: 24px;
-    }
-    #chapter.show { opacity: 1; }
-    #chapter .n { color: var(--dim); letter-spacing: .5em; font-size: 12px; padding-left: .5em; }
-    #chapter .t { font-size: clamp(22px, 5vw, 40px); font-weight: 300; letter-spacing: .28em; padding-left: .28em; margin-top: 10px; text-transform: uppercase; }
-    #chapter .o { color: var(--faint); font-size: 12px; letter-spacing: .3em; margin-top: 12px; text-transform: uppercase; }
 
     /* ================= BARRA SUPERIOR ================= */
     .top {
@@ -104,12 +93,33 @@
     .inv { background: var(--inv-bg); color: var(--inv-fg); padding: 0 6px; }
     .boot { color: var(--dim); }
     .boot .ok { color: var(--fg); }
-    .caphead { margin: 30px 0 12px; display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
-    .caphead .num { background: var(--inv-bg); color: var(--inv-fg); padding: 0 8px; font-size: 12px; letter-spacing: .2em; }
-    .caphead .tt { letter-spacing: .2em; text-transform: uppercase; font-weight: 600; }
-    .caphead .oo { color: var(--faint); font-size: 12px; letter-spacing: .15em; text-transform: uppercase; }
-    .letter p { max-width: 68ch; }
-    .quote { border-left: 2px solid var(--fg); padding: 2px 0 2px 16px; margin: 18px 0; font-style: italic; max-width: 68ch; }
+    /* ================= PRESENTACIÓN ================= */
+    .reveal { opacity: 0; transform: translateY(8px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+    .hero { padding: 26px 0 30px; border-bottom: 1px solid var(--border); margin-bottom: 26px; }
+    .hero .kicker { color: var(--dim); letter-spacing: .3em; font-size: 12px; text-transform: uppercase; }
+    .hero h2 { font-size: clamp(30px, 7vw, 58px); font-weight: 800; letter-spacing: -.02em; line-height: 1.02; margin: 14px 0 18px; text-transform: uppercase; }
+    .hero h2 .thin { font-weight: 300; }
+    .hero .lead { font-size: clamp(15px, 2.2vw, 18px); max-width: 60ch; margin: 0 0 16px; }
+    .hero .facts { color: var(--dim); font-size: 13px; }
+    .hero .cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+    .btn { display: inline-block; padding: 8px 16px; border: 1px solid var(--fg); color: var(--fg); background: none; cursor: pointer; letter-spacing: .08em; font-size: 13.5px; text-decoration: none; }
+    .btn:hover { background: var(--inv-bg); color: var(--inv-fg); }
+    .btn.solid { background: var(--inv-bg); color: var(--inv-fg); }
+    .btn.solid:hover { background: none; color: var(--fg); }
+    .section-title { color: var(--dim); letter-spacing: .3em; font-size: 12px; text-transform: uppercase; margin: 0 0 14px; }
+    .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 30px; }
+    .pillar { border: 1px solid var(--border); padding: 16px; background: var(--card); }
+    .pillar .no { color: var(--faint); font-size: 12px; letter-spacing: .15em; }
+    .pillar h3 { margin: 6px 0 8px; font-size: 15px; letter-spacing: .12em; text-transform: uppercase; }
+    .pillar p { margin: 0; color: var(--dim); font-size: 13.5px; }
+    @media (max-width: 720px) { .pillars { grid-template-columns: 1fr; } }
+    .about { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 30px 0 8px; padding-top: 26px; border-top: 1px solid var(--border); }
+    .about p { color: var(--dim); margin: 0 0 10px; }
+    .about .line { font-size: clamp(17px, 2.6vw, 22px); font-weight: 300; line-height: 1.4; }
+    .about .ps { color: var(--faint); font-size: 12px; letter-spacing: .15em; margin-top: 14px; }
+    @media (max-width: 720px) { .about { grid-template-columns: 1fr; } }
+    .quote { border-left: 2px solid var(--fg); padding: 2px 0 2px 16px; margin: 18px 0; font-style: italic; max-width: 66ch; }
     .quote .dim { font-style: normal; display: block; margin-top: 4px; }
     .caret::after { content: "▌"; animation: blink 1s steps(1) infinite; margin-left: 1px; }
     @keyframes blink { 50% { opacity: 0; } }
@@ -128,12 +138,47 @@
 
     .case-title { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; margin-bottom: 12px; }
     .case-title strong { font-size: 17px; }
-    .tag { font-size: 11.5px; padding: 0 8px; letter-spacing: .15em; border: 1px solid var(--fg); }
+    .tag { font-size: 11px; padding: 0 8px; letter-spacing: .15em; border: 1px solid var(--fg); white-space: nowrap; }
     .tag.solid { background: var(--inv-bg); color: var(--inv-fg); }
     figure { margin: 4px 0 16px; max-width: 760px; }
     figure img { display: block; width: 100%; height: auto; border: 1px solid var(--border); filter: grayscale(1) contrast(1.05); transition: filter .5s ease; }
     figure:hover img, figure:active img { filter: none; }
     figcaption { color: var(--dim); font-size: 12.5px; margin-top: 6px; }
+
+    /* ================= CARRUSEL ================= */
+    .carousel { margin: 6px 0 4px; }
+    .car-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; gap: 12px; }
+    .car-head .title { letter-spacing: .2em; text-transform: uppercase; font-size: 12px; color: var(--dim); }
+    .track {
+      display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth;
+      scrollbar-width: none; padding-bottom: 2px; outline: none;
+    }
+    .track::-webkit-scrollbar { display: none; }
+    .slide {
+      flex: 0 0 min(560px, 88%); scroll-snap-align: start; background: var(--card); border: 1px solid var(--border);
+      display: flex; flex-direction: column; transition: border-color .3s ease;
+    }
+    .slide.active { border-color: var(--dim); }
+    .shot { aspect-ratio: 16 / 9; overflow: hidden; border-bottom: 1px solid var(--border); background: var(--bar); position: relative; }
+    .shot img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; filter: grayscale(1) contrast(1.05); transition: filter .5s ease, transform .8s ease; }
+    .slide:hover .shot img { filter: none; transform: scale(1.02); }
+    .shot.art { display: grid; place-items: center; text-align: center; padding: 16px; }
+    .shot.art .formula { font-size: clamp(20px, 4vw, 30px); font-weight: 300; letter-spacing: .02em; }
+    .shot.art .flow { color: var(--dim); font-size: 12px; letter-spacing: .15em; margin-top: 10px; }
+    .slide .body { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+    .slide .meta { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+    .slide .idx { color: var(--faint); font-size: 12px; letter-spacing: .15em; }
+    .slide h3 { margin: 0; font-size: 15px; letter-spacing: .06em; font-weight: 600; }
+    .slide p { margin: 0; color: var(--dim); font-size: 13.5px; }
+    .slide .actions { margin-top: auto; padding-top: 6px; display: flex; gap: 16px; flex-wrap: wrap; font-size: 13.5px; }
+    .car-nav { display: flex; align-items: center; gap: 10px; margin-top: 12px; }
+    .car-nav .arrow { width: 34px; height: 30px; background: none; border: 1px solid var(--border); color: var(--fg); cursor: pointer; }
+    .car-nav .arrow:hover { background: var(--inv-bg); color: var(--inv-fg); border-color: var(--inv-bg); }
+    .car-nav .arrow:disabled { opacity: .3; cursor: default; background: none; color: var(--fg); border-color: var(--border); }
+    .dots { display: flex; gap: 6px; }
+    .dots button { width: 18px; height: 4px; padding: 0; border: 0; background: var(--faint); cursor: pointer; transition: background .3s, width .3s; }
+    .dots button[aria-current="true"] { background: var(--fg); width: 30px; }
+    .car-count { color: var(--dim); font-size: 12px; margin-left: auto; }
 
     .prompt { display: flex; align-items: center; gap: 10px; margin-top: 20px; }
     .prompt label { flex: none; }
@@ -162,7 +207,8 @@
 
     @media (prefers-reduced-motion: reduce) {
       .lambda circle, .lambda path { animation: none; stroke-dashoffset: 0; }
-      #gate, #chapter, figure img { transition: none; }
+      #gate, figure img, .shot img, .reveal { transition: none; }
+      .track { scroll-behavior: auto; }
       .caret::after { animation: none; }
     }
     noscript { display: block; max-width: 760px; margin: 0 auto; padding: 24px 16px; }
@@ -183,11 +229,9 @@
       <button class="enter" id="enterSound" type="button">▶ Entrar con sonido</button>
       <button class="quiet" id="enterQuiet" type="button">entrar sin sonido</button>
     </div>
-    <div class="note">Enter para entrar · recomendado con auriculares</div>
+    <div class="note">Enter para entrar · mejor con auriculares</div>
   </div>
 </div>
-
-<div id="chapter" aria-hidden="true"><div><div class="n" id="chN"></div><div class="t" id="chT"></div><div class="o" id="chO"></div></div></div>
 
 <header class="top">
   <div class="tab">λ bruno@cordoba: ~</div>
@@ -220,7 +264,7 @@
 
 <div class="dock">
   <nav class="chips" aria-label="Comandos rápidos">
-    <button type="button" data-cmd="carta">carta</button>
+    <button type="button" data-cmd="inicio">inicio</button>
     <button type="button" data-cmd="proyectos">proyectos</button>
     <button type="button" data-cmd="musica">musica</button>
     <button type="button" data-cmd="drop">drop</button>
@@ -387,8 +431,7 @@
     if (viz.width !== w * dpr) { viz.width = w * dpr; viz.height = h * dpr; }
     vctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     vctx.clearRect(0, 0, w, h);
-    var color = getComputedStyle(root).getPropertyValue("--fg").trim() || "#fff";
-    vctx.fillStyle = color;
+    vctx.fillStyle = getComputedStyle(root).getPropertyValue("--fg").trim() || "#fff";
     var an = Mix.analyser(), bars = Math.max(8, Math.floor(w / 5));
     if (an && Mix.playing()) {
       vdata = vdata || new Uint8Array(an.frequencyBinCount);
@@ -433,116 +476,78 @@
     return '<a href="' + url + '" target="_blank" rel="noopener">' + label + " ↗</a>";
   }
 
-  // ---------------- la carta ----------------
-  var CHAPTERS = [
-    { n: "CAPÍTULO 1", t: "Córdoba Inbound", o: "black mesa inbound", p: [
-      "Me llamo Bruno. Soy de Córdoba y desde siempre me obsesiona lo mismo: crear cosas que antes no existían.",
-      "A veces es un set de música. A veces es software. Para mí son lo mismo: elegir qué va con qué, cuidar cada transición y pensar en quien está del otro lado."
-    ]},
-    { n: "CAPÍTULO 2", t: "Materiales anómalos", o: "anomalous materials", p: [
-      "No empecé en un laboratorio: empecé vendiendo piscinas. En A&M Piscinas los clientes vivían en papel. Cuadernos, carpetas, llamadas que nadie devolvía.",
-      "Algo no funcionaba, y yo no podía dejar de verlo."
-    ]},
-    { n: "CAPÍTULO 3", t: "Consecuencias imprevistas", o: "unforeseen consequences", p: [
-      "Así que escribí mi primer sistema de verdad. Digitalicé la gestión de clientes y las ventas subieron un 10 %.",
-      "Fue mi cascada de resonancia: entendí que programar era la herramienta más poderosa que tenía para crear."
-    ]},
-    { n: "CAPÍTULO 4", t: "Sobre rieles", o: "on a rail", p: [
-      "Hoy estudio Ingeniería en Sistemas en la UTN, me formo en ciberseguridad y construyo sin parar: una plataforma en producción, un control de acceso biométrico, una herramienta de auditoría Bluetooth y un tutor de matemática con IA.",
-      "Y WaveLoad, que nació de mi otra pasión: la cabina. Tenía cientos de temas y ninguna herramienta que los ordenara como yo quería. Así que la hice."
-    ]},
-    { n: "CAPÍTULO 5", t: "Núcleo lambda", o: "lambda core", p: [
-      "Steve Jobs decía que la tecnología sola no alcanza: que tiene que casarse con las humanidades para que el resultado haga cantar el corazón. Eso busco en todo lo que hago.",
-      "Ah, y una cosa más. La música que está sonando no es de nadie más: está escrita en JavaScript, en esta misma página. Programar y pinchar, al mismo tiempo."
-    ]}
-  ];
-  var GMAN = '<div class="quote">"The right man in the wrong place can make all the difference in the world."<span class="dim">— G-Man, Half-Life 2</span></div>';
-
   // Secuencias animadas que se pueden saltear con cualquier tecla o clic.
   var skipping = false, sequenceRunning = false;
   function wait(ms) { return new Promise(function (r) { setTimeout(r, skipping || reduced ? 0 : ms); }); }
-  function typeInto(el, text, cps) {
-    return new Promise(function (resolve) {
-      if (skipping || reduced) { el.textContent = text; return resolve(); }
-      var i = 0, perFrame = Math.max(1, Math.round((cps || 140) / 60));
-      el.classList.add("caret");
-      (function frame() {
-        if (skipping) i = text.length; else i += perFrame;
-        el.textContent = text.slice(0, i);
-        keepBottom();
-        if (i < text.length) requestAnimationFrame(frame);
-        else { el.classList.remove("caret"); resolve(); }
-      })();
-    });
-  }
-  function keepBottom() {
-    if (sequenceRunning) scrollTo(0, document.body.scrollHeight);
-  }
-  var chapterEl = document.getElementById("chapter");
-  function chapterCard(ch) {
-    if (skipping || reduced) return Promise.resolve();
-    document.getElementById("chN").textContent = ch.n;
-    document.getElementById("chT").textContent = ch.t;
-    document.getElementById("chO").textContent = ch.o;
-    chapterEl.classList.add("show");
-    return wait(1500).then(function () { chapterEl.classList.remove("show"); return wait(450); });
-  }
-
+  function keepBottom() { if (sequenceRunning && !skipping) scrollTo(0, document.body.scrollHeight); }
   function runSequence(fn) {
     skipping = false; sequenceRunning = true;
-    return fn().then(function () { sequenceRunning = false; skipping = false; chapterEl.classList.remove("show"); });
+    return fn().then(function () { sequenceRunning = false; skipping = false; });
   }
   function skip() { if (sequenceRunning) skipping = true; }
 
   function boot() {
     var lines = [
-      ["inicializando sistema de presentación", "ok"],
-      ["calibrando monitores de audio", Mix.playing() ? "ok · 122 bpm" : "en silencio"],
+      ["sincronizando a " + Mix.bpm() + " bpm", Mix.playing() ? "ok" : "en silencio"],
       ["cargando 5 proyectos", "ok"],
-      ["verificando permisos (mínimo privilegio)", "ok"],
-      ["detectando visitante", "ok"]
+      ["armando la página", "ok"]
     ];
-    var b = block('<div class="boot"><div>λ BRUNO OS · Mark IV</div></div>');
-    var box = b.firstChild;
+    var box = block('<div class="boot"></div>').firstChild;
     return lines.reduce(function (p, l) {
       return p.then(function () {
         var row = document.createElement("div");
-        var dots = new Array(Math.max(3, 44 - l[0].length)).join(".");
+        var dots = new Array(Math.max(3, 34 - l[0].length)).join(".");
         row.innerHTML = "&gt; " + esc(l[0]) + ' <span class="faint">' + dots + '</span> <span class="ok">' + esc(l[1]) + "</span>";
         box.appendChild(row); keepBottom();
-        return wait(230);
+        return wait(260);
       });
-    }, Promise.resolve()).then(function () { return wait(350); });
+    }, Promise.resolve()).then(function () { return wait(300); });
   }
 
-  function letter() {
-    var wrap = block('<div class="dim">Rise and shine, visitante. <span class="faint">Rise and… shine.</span></div>', "letter");
-    return CHAPTERS.reduce(function (p, ch) {
-      return p.then(function () { return chapterCard(ch); }).then(function () {
-        var head = document.createElement("div");
-        head.className = "caphead";
-        head.innerHTML = '<span class="num">' + esc(ch.n) + '</span><span class="tt">' + esc(ch.t) + '</span><span class="oo">' + esc(ch.o) + "</span>";
-        wrap.appendChild(head); keepBottom();
-        return ch.p.reduce(function (pp, text) {
-          return pp.then(function () {
-            var para = document.createElement("p");
-            wrap.appendChild(para);
-            return typeInto(para, text).then(function () { return wait(250); });
-          });
-        }, Promise.resolve());
-      });
-    }, Promise.resolve()).then(function () {
-      var end = document.createElement("div");
-      end.innerHTML = GMAN + hint(["proyectos", "musica", "contacto", "help"]);
-      wrap.appendChild(end); keepBottom();
+  // ---------------- la página de presentación ----------------
+  function reveal(el) {
+    el.classList.add("reveal");
+    requestAnimationFrame(function () { requestAnimationFrame(function () { el.classList.add("in"); }); });
+    return el;
+  }
+  function presentation() {
+    var parts = [
+      '<section class="hero">' +
+        '<div class="kicker">λ · Córdoba, Argentina</div>' +
+        '<h2>Bruno Savarella<br><span class="thin">dj · programador · software</span></h2>' +
+        '<p class="lead">Construyo software con la misma lógica con la que armo un set: cada pieza en su lugar, transiciones cuidadas y alguien del otro lado que lo disfrute.</p>' +
+        '<div class="facts">Ing. en Sistemas (UTN) · ciberseguridad · desarrollo con IA · inglés B2</div>' +
+        '<div class="cta">' + '<button type="button" class="btn solid" data-cmd="proyectos">ver proyectos</button>' +
+        '<button type="button" class="btn" data-cmd="contacto">contacto</button>' +
+        '<a class="btn" href="https://github.com/Brun02005" target="_blank" rel="noopener">github ↗</a></div>' +
+      "</section>",
+
+      '<div class="section-title">lo que hago</div><div class="pillars">' +
+        '<div class="pillar"><div class="no">01</div><h3>Software</h3><p>Sitios, sistemas de gestión y automatización con IA. Uno está en producción y llevó las ventas de una empresa un 10 % arriba.</p></div>' +
+        '<div class="pillar"><div class="no">02</div><h3>Seguridad</h3><p>Permisos, privacidad y datos protegidos desde el diseño, no como parche. Formación en FAMAF-UNC e IBM.</p></div>' +
+        '<div class="pillar"><div class="no">03</div><h3>Música</h3><p>Pincho desde antes de programar. Lo que suena en esta página no es un archivo: está escrito en JavaScript.</p></div>' +
+      "</div>"
+    ];
+    var els = parts.map(function (html) { return reveal(block(html)); });
+    scrollTo({ top: Math.max(0, els[0].getBoundingClientRect().top + scrollY - 52), behavior: reduced || skipping ? "auto" : "smooth" });
+    return wait(350).then(function () {
+      reveal(projectsCarousel("proyectos"));
+      reveal(block('<section class="about">' +
+        '<div><p class="line">La tecnología sola no alcanza. Tiene que cruzarse con lo humano para que valga la pena.</p></div>' +
+        "<div><p>Empecé vendiendo piscinas. Los clientes vivían en papel y escribí mi primer sistema para ordenarlos: ahí entendí que programar era otra forma de crear.</p>" +
+        "<p>A veces la persona correcta en el lugar equivocado termina siendo justo lo que hacía falta.</p>" +
+        '<div class="ps">stay hungry · stay foolish</div></div></section>'));
+      block('<div class="dim">→ explorá con ' + cmdLink("help") + ", tocá un atajo de abajo o probá " + cmdLink("drop") + ".</div>");
+      return els;
     });
   }
 
   // ---------------- proyectos ----------------
   var PROJECTS = {
     aym: {
-      dir: "aym-piscinas", short: "cotizador online + CRM · en producción",
+      dir: "aym-piscinas", name: "A&amp;M Piscinas", short: "Cotizador online y CRM en producción. Del papel al sistema: ventas +10 %.",
       title: "A&amp;M Piscinas — cotizador online y CRM", tag: "EN PRODUCCIÓN", solid: true,
+      cover: "assets/aym-hero.png", link: ["https://aym-piscinas.pages.dev", "ver sitio"],
       img: ["assets/aym-catalogo.png", "assets/aym-hero.png"], caption: "Captura real del sitio en producción. Pasá el mouse para verla en color.",
       rows: [
         ["problema", "Los clientes se gestionaban en papel y se perdían en el seguimiento."],
@@ -553,8 +558,9 @@
       ]
     },
     acceso: {
-      dir: "control-acceso", short: "reconocimiento facial con prueba de vida",
+      dir: "control-acceso", name: "Control de acceso biométrico", short: "Reconocimiento facial con prueba de vida. Falsa aceptación de 1 en 12.500.",
       title: "Control de acceso biométrico", tag: "VISIÓN POR COMPUTADORA",
+      cover: "assets/acceso-calibracion.png", link: ["https://github.com/Brun02005/control-acceso-facial", "código"],
       img: ["assets/acceso-calibracion.png"], caption: "Calibración real del umbral sobre el benchmark LFW (2.308 identidades).",
       rows: [
         ["problema", "Controlar quién entra sin tarjetas ni llaves, y sin que una foto alcance para engañar al sistema."],
@@ -565,8 +571,9 @@
       ]
     },
     bluedar: {
-      dir: "blue-dar", short: "auditoría pasiva de entornos Bluetooth",
+      dir: "blue-dar", name: "BLUE-DAR", short: "Auditoría pasiva del entorno Bluetooth, con privacidad por diseño.",
       title: "BLUE-DAR — análisis pasivo de entornos BLE", tag: "CIBERSEGURIDAD",
+      cover: "assets/bluedar.png", link: ["https://github.com/Brun02005/BLUE-DAR", "código"],
       img: ["assets/bluedar.png"], caption: "Interfaz web corriendo con datos simulados.",
       rows: [
         ["problema", "Auditar el entorno Bluetooth sin convertir la herramienta en un rastreador de personas."],
@@ -577,8 +584,9 @@
       ]
     },
     waveload: {
-      dir: "waveload", short: "el software de mi cabina",
+      dir: "waveload", name: "WaveLoad", short: "El software de mi cabina: BPM, tono y energía de cada tema. 646 tests.",
       title: "WaveLoad — el software de mi cabina", tag: "DJ × SOFTWARE", solid: true,
+      cover: "assets/waveload.png", link: ["https://github.com/Brun02005/WaveLoad", "código"],
       img: ["assets/waveload.png"], caption: "Vista de la librería: BPM, tono y energía calculados para cada tema.",
       rows: [
         ["problema", "Cientos de temas para pinchar y ninguna herramienta que los organizara como yo quería."],
@@ -589,8 +597,10 @@
       ]
     },
     mathvision: {
-      dir: "mathvision", short: "tutor de matemática con IA · en desarrollo",
+      dir: "mathvision", name: "MathVision AI", short: "Sacás una foto del ejercicio y lo resuelve paso a paso. En desarrollo.",
       title: "MathVision AI — tutor de matemática", tag: "EN DESARROLLO",
+      art: '<div class="formula">∫ (x² + 1) dx = x³⁄3 + x + C</div><div class="flow">FOTO → LATEX → SYMPY → PASO A PASO</div>',
+      link: ["https://github.com/Brun02005/mathvision-ai", "código"],
       img: ["assets/mathvision.png"], caption: "Frontend en desarrollo.",
       rows: [
         ["problema", "Un modelo de lenguaje lee muy bien una foto, pero puede equivocarse en un paso de la cuenta y explicarlo con total seguridad."],
@@ -610,6 +620,56 @@
     "mathvision": "mathvision", "math": "mathvision", "iamath": "mathvision"
   };
 
+  // Carrusel: deslizable con el dedo, flechas, puntos o ← → con el foco en las tarjetas.
+  function projectsCarousel(title) {
+    var n = ORDER.length;
+    var slides = ORDER.map(function (k, i) {
+      var p = PROJECTS[k];
+      var shot = p.art
+        ? '<div class="shot art">' + p.art + "</div>"
+        : '<div class="shot"><img src="' + p.cover + '" alt="Captura de ' + esc(p.name.replace(/&amp;/g, "&")) + '" loading="lazy"></div>';
+      return '<article class="slide" role="group" aria-roledescription="diapositiva" aria-label="' + (i + 1) + " de " + n + '">' + shot +
+        '<div class="body"><div class="meta"><span class="idx">' + String(i + 1).padStart(2, "0") + " / " + String(n).padStart(2, "0") +
+        '</span><span class="tag' + (p.solid ? " solid" : "") + '">' + p.tag + "</span></div>" +
+        "<h3>" + p.name + "</h3><p>" + p.short + "</p>" +
+        '<div class="actions">' + cmdLink("ver " + k, "ver caso →") + ext(p.link[0], p.link[1]) + "</div></div></article>";
+    }).join("");
+    var b = block('<section class="carousel" aria-roledescription="carrusel" aria-label="Proyectos">' +
+      '<div class="car-head"><span class="title">' + esc(title || "proyectos") + '</span><span class="dim" style="font-size:12px">deslizá o usá ← →</span></div>' +
+      '<div class="track" tabindex="0">' + slides + "</div>" +
+      '<div class="car-nav"><button type="button" class="arrow prev" aria-label="Proyecto anterior">←</button>' +
+      '<div class="dots">' + ORDER.map(function (k, i) { return '<button type="button" aria-label="Ir al proyecto ' + (i + 1) + '"></button>'; }).join("") + "</div>" +
+      '<button type="button" class="arrow next" aria-label="Proyecto siguiente">→</button><span class="car-count"></span></div></section>');
+
+    var track = b.querySelector(".track"), items = b.querySelectorAll(".slide"), dots = b.querySelectorAll(".dots button");
+    var prev = b.querySelector(".prev"), next = b.querySelector(".next"), count = b.querySelector(".car-count");
+    b.querySelectorAll(".shot img").forEach(function (img) { img.onerror = function () { img.remove(); }; });
+    function stepSize() { return items.length > 1 ? items[1].offsetLeft - items[0].offsetLeft : track.clientWidth; }
+    function atEnd() { return track.scrollLeft >= track.scrollWidth - track.clientWidth - 2; }
+    function current() { return atEnd() ? n - 1 : Math.max(0, Math.min(n - 1, Math.round(track.scrollLeft / stepSize()))); }
+    function go(i) { track.scrollTo({ left: Math.max(0, Math.min(n - 1, i)) * stepSize(), behavior: reduced ? "auto" : "smooth" }); }
+    function update() {
+      var c = current();
+      items.forEach(function (s, i) { s.classList.toggle("active", i === c); });
+      dots.forEach(function (d, i) { d.setAttribute("aria-current", i === c ? "true" : "false"); });
+      prev.disabled = track.scrollLeft <= 2;
+      next.disabled = atEnd();
+      count.textContent = (c + 1) + " / " + n;
+    }
+    prev.addEventListener("click", function (e) { e.stopPropagation(); go(current() - 1); });
+    next.addEventListener("click", function (e) { e.stopPropagation(); go(current() + 1); });
+    dots.forEach(function (d, i) { d.addEventListener("click", function (e) { e.stopPropagation(); go(i); }); });
+    track.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowRight") { e.preventDefault(); go(current() + 1); }
+      if (e.key === "ArrowLeft") { e.preventDefault(); go(current() - 1); }
+    });
+    var pending;
+    track.addEventListener("scroll", function () { clearTimeout(pending); pending = setTimeout(update, 60); }, { passive: true });
+    addEventListener("resize", update);
+    update();
+    return b;
+  }
+
   function figure(srcs, caption) {
     return '<figure data-src="' + srcs.join("|") + '"><img alt="' + esc(caption) + '" loading="lazy"><figcaption>' + caption + "</figcaption></figure>";
   }
@@ -626,8 +686,8 @@
 
   C.help = function () {
     block(rows([
-      [cmdLink("carta"), "mi carta de presentación, en cinco capítulos"],
-      [cmdLink("proyectos"), "lo que construí"],
+      [cmdLink("inicio"), "volver a la presentación"],
+      [cmdLink("proyectos"), "lo que construí, en carrusel"],
       ['ver <span class="dim">&lt;proyecto&gt;</span>', "el caso completo, ej: " + cmdLink("ver waveload")],
       [cmdLink("musica"), "el tema que suena y cómo manejarlo"],
       ["play · stop · drop", "controlá la mezcla"],
@@ -642,14 +702,10 @@
     ]) + '<div class="faint" style="margin-top:12px">Tab autocompleta · ↑ ↓ historial · hay cosas escondidas</div>');
   };
 
-  C.carta = function () {
-    return runSequence(letter);
-  };
+  C.inicio = function () { C.clear(); return runSequence(presentation); };
 
   C.proyectos = function () {
-    block('<div class="dim">total ' + ORDER.length + "</div>" + rows(ORDER.map(function (k) {
-      return ['<span class="faint">drwxr-x</span> ' + cmdLink("ver " + k, PROJECTS[k].dir + "/"), PROJECTS[k].short];
-    })) + '<div class="dim" style="margin-top:12px">→ tocá un nombre o escribí <span class="inv">ver aym</span></div>');
+    projectsCarousel("proyectos");
   };
 
   C.ver = function (arg) {
@@ -740,7 +796,7 @@
   C.simple = function () {
     C.clear();
     skipping = true; sequenceRunning = true;
-    return letter().then(function () {
+    return presentation().then(function () {
       sequenceRunning = false; skipping = false;
       ORDER.forEach(function (k) { C.ver(k); });
       ["experiencia", "formacion", "stack", "servicios", "contacto"].forEach(function (c) { C[c](); });
@@ -749,28 +805,27 @@
   };
 
   C.clear = function () { out.innerHTML = ""; };
-  C.whoami = function () { block("Bruno Savarella · DJ · programador · software · Córdoba, AR" + hint(["carta", "proyectos"])); };
+  C.whoami = function () { block("Bruno Savarella · DJ · programador · software · Córdoba, AR" + hint(["inicio", "proyectos"])); };
   C.pwd = function () { block("/home/bruno"); };
   C.tema = function () { toggleTheme(); };
-  C.hev = function () { return runSequence(boot); };
 
-  // Cosas escondidas
+  // Cosas escondidas (para quien las busque)
   function egg(name, args) {
     if (name === "sudo") return "bruno no está en el archivo sudoers. Este incidente será reportado. 😉<br><span class=\"dim\">Mínimo privilegio, siempre.</span>";
     if (name === "rm" && /-rf/.test(args)) return "Permiso denegado. <span class=\"dim\">Los permisos viven en la base de datos, no en la interfaz.</span>";
-    if (name === "λ" || name === "lambda") return "λ — en Half-Life es el símbolo de la resistencia. En programación, una función anónima. A mí me gustan las dos.";
+    if (name === "λ" || name === "lambda") return "λ — una función sin nombre. O un símbolo de resistencia, según a quién le preguntes.";
     if (name === "crowbar" || name === "palanca") return "Agarraste la palanca. No hay caso que se resista: " + ORDER.map(function (k) { return cmdLink("ver " + k, k); }).join(" · ");
-    if (name === "gman" || name === "g-man") return GMAN;
+    if (name === "gman" || name === "g-man") return '<div class="quote">"The right man in the wrong place can make all the difference in the world."</div>';
     if (name === "freeman" || name === "gordon") return "Gordon no habla. Yo sí: " + cmdLink("contacto", "escribime") + ".";
-    if (name === "jobs" || name === "stevejobs") return '<div class="quote">"Stay hungry. Stay foolish."<span class="dim">— Steve Jobs, Stanford, 2005</span></div>';
-    if (name === "exit" || name === "logout") return "No hay salida, Freeman… digo, visitante. Mejor " + cmdLink("contacto", "escribime") + ".";
+    if (name === "jobs") return '<div class="quote">"Stay hungry. Stay foolish."<span class="dim">— Stanford, 2005</span></div>';
+    if (name === "exit" || name === "logout") return "No hay salida. Mejor " + cmdLink("contacto", "escribime") + ".";
     if (name === "hack" || name === "hackear") return "Acceso denegado. Si te interesa la seguridad, probá " + cmdLink("ver bluedar") + ".";
     if (name === "ping") return "pong <span class=\"dim\">· tiempo de respuesta: lo que tardes en escribirme</span>";
     return null;
   }
 
-  var ALIAS = { "ayuda": "help", "?": "help", "ls": "proyectos", "projects": "proyectos", "historia": "carta",
-    "about": "carta", "cls": "clear", "cat": "ver", "cd": "ver", "open": "ver", "skills": "stack", "music": "musica",
+  var ALIAS = { "ayuda": "help", "?": "help", "ls": "proyectos", "projects": "proyectos", "historia": "inicio",
+    "about": "inicio", "sobre": "inicio", "home": "inicio", "carta": "inicio", "cls": "clear", "cat": "ver", "cd": "ver", "open": "ver", "skills": "stack", "music": "musica",
     "música": "musica", "dj": "musica", "pause": "stop", "pausa": "stop", "formación": "formacion", "estudios": "formacion",
     "contact": "contacto", "trabajo": "experiencia", "theme": "tema", "invertir": "tema" };
 
@@ -790,7 +845,7 @@
     if (Object.prototype.hasOwnProperty.call(C, key)) result = C[key](args);
     else block(egg(name, args) || "comando no encontrado: " + esc(parts[0]) + ' <span class="dim">·</span> ' + cmdLink("help"));
     if (key === "clear" || key === "simple") { scrollTo(0, 0); return; }
-    if (result && result.then) return;   // las secuencias se desplazan solas
+    if (result && result.then) return;
     var y = echo.getBoundingClientRect().top + scrollY - 52;
     scrollTo({ top: y, behavior: reduced ? "auto" : "smooth" });
   }
@@ -801,7 +856,7 @@
     run(v);
   });
 
-  var COMMANDS = ["help", "carta", "proyectos", "ver", "musica", "play", "stop", "drop", "bpm", "stack", "experiencia", "formacion", "servicios", "contacto", "simple", "clear"];
+  var COMMANDS = ["help", "inicio", "proyectos", "ver", "musica", "play", "stop", "drop", "bpm", "stack", "experiencia", "formacion", "servicios", "contacto", "simple", "clear"];
   input.addEventListener("keydown", function (e) {
     if (e.key === "ArrowUp" && history.length) {
       e.preventDefault(); hIndex = Math.max(0, hIndex - 1); input.value = history[hIndex];
@@ -829,7 +884,7 @@
       if (!touch) input.focus({ preventScroll: true });
       return;
     }
-    if (!touch && e.target.closest("main") && !e.target.closest("a") && !getSelection().toString()) input.focus({ preventScroll: true });
+    if (!touch && e.target.closest("main") && !e.target.closest("a, .carousel") && !getSelection().toString()) input.focus({ preventScroll: true });
   });
   document.addEventListener("keydown", function (e) {
     if (sequenceRunning && gate.classList.contains("gone") && e.key !== "Tab") skip();
@@ -869,7 +924,7 @@
       block('<span class="dim">Escribí </span>' + cmdLink("help") + '<span class="dim"> o tocá un comando de abajo.</span>');
       scrollTo(0, 0);
     } else {
-      runSequence(function () { return boot().then(letter); });
+      runSequence(function () { return boot().then(presentation); });
     }
     if (!touch) input.focus({ preventScroll: true });
   }
