@@ -3,145 +3,197 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Bruno Savarella — Terminal</title>
-  <meta name="description" content="Bruno Savarella, desarrollador Python y JavaScript de Córdoba, Argentina. Ciberseguridad, visión por computadora y desarrollo con IA. Explorá mis proyectos desde una terminal.">
+  <title>Bruno Savarella — λ</title>
+  <meta name="description" content="Bruno Savarella: DJ, programador y obsesivo del software. Córdoba, Argentina. Una carta de presentación en una terminal, con un tema de house escrito en JavaScript.">
   <meta name="author" content="Bruno Savarella">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Bruno Savarella — Desarrollador">
-  <meta property="og:description" content="Python · JavaScript · Ciberseguridad · Desarrollo con IA. Córdoba, Argentina.">
+  <meta property="og:title" content="Bruno Savarella — DJ · programador · software">
+  <meta property="og:description" content="Una carta de presentación en una terminal. La música que suena está escrita en código.">
   <meta property="og:url" content="https://brun02005.github.io/">
   <meta property="og:image" content="https://brun02005.github.io/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="627">
-  <meta property="og:image:alt" content="Bruno Savarella — Desarrollador Python &amp; JavaScript">
+  <meta property="og:image:alt" content="λ Bruno Savarella — DJ, programador y software">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="theme-color" content="#0c0d0f">
+  <meta name="theme-color" content="#000000">
   <link rel="canonical" href="https://brun02005.github.io/">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230c0d0f'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='28' font-weight='700' fill='%233ddc97' text-anchor='middle'%3E%3E_%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23000'/%3E%3Ccircle cx='32' cy='32' r='22' fill='none' stroke='%23fff' stroke-width='4'/%3E%3Cpath d='M22 46 L32 26 M26 18 L42 46' stroke='%23fff' stroke-width='5' stroke-linecap='round' fill='none'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,600;0,800;1,400&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0c0d0f; --bar: #121418; --fg: #d6d6d6; --dim: #7d8590; --border: #23272e;
-      --green: #3ddc97; --amber: #f0b35a; --cyan: #6cb6ff; --red: #ff7b72; --sel: rgba(61,220,151,.22);
+      --bg: #000; --bar: #0a0a0a; --fg: #f2f2f2; --dim: #8c8c8c; --faint: #3a3a3a; --border: #222;
+      --inv-bg: #f2f2f2; --inv-fg: #000;
       --mono: "JetBrains Mono", ui-monospace, Consolas, "Courier New", monospace;
     }
     @media (prefers-color-scheme: light) {
       :root:not([data-theme="dark"]) {
-        --bg: #f6f3ea; --bar: #ece8dc; --fg: #24292f; --dim: #6e7781; --border: #d8d3c4;
-        --green: #0f8a5f; --amber: #9a6700; --cyan: #0969da; --red: #cf222e; --sel: rgba(15,138,95,.18);
+        --bg: #fff; --bar: #f4f4f4; --fg: #0d0d0d; --dim: #6b6b6b; --faint: #c8c8c8; --border: #e2e2e2;
+        --inv-bg: #0d0d0d; --inv-fg: #fff;
       }
     }
     :root[data-theme="light"] {
-      --bg: #f6f3ea; --bar: #ece8dc; --fg: #24292f; --dim: #6e7781; --border: #d8d3c4;
-      --green: #0f8a5f; --amber: #9a6700; --cyan: #0969da; --red: #cf222e; --sel: rgba(15,138,95,.18);
+      --bg: #fff; --bar: #f4f4f4; --fg: #0d0d0d; --dim: #6b6b6b; --faint: #c8c8c8; --border: #e2e2e2;
+      --inv-bg: #0d0d0d; --inv-fg: #fff;
     }
 
     * { box-sizing: border-box; }
     html, body { margin: 0; background: var(--bg); color: var(--fg); }
-    body { font: 15px/1.6 var(--mono); -webkit-font-smoothing: antialiased; min-height: 100vh; }
-    ::selection { background: var(--sel); }
-    a { color: var(--cyan); text-decoration: none; border-bottom: 1px dashed currentColor; }
-    a:hover { color: var(--green); }
-    :focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
-    p { margin: 0 0 10px; }
+    body { font: 15px/1.65 var(--mono); -webkit-font-smoothing: antialiased; min-height: 100vh; }
+    ::selection { background: var(--inv-bg); color: var(--inv-fg); }
+    a { color: var(--fg); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+    a:hover { background: var(--inv-bg); color: var(--inv-fg); text-decoration: none; }
+    :focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; }
+    p { margin: 0 0 12px; }
+    button { font: inherit; }
 
-    /* ---------- barra superior ---------- */
+    /* ================= PUERTA DE ENTRADA ================= */
+    #gate {
+      position: fixed; inset: 0; z-index: 30; background: var(--bg);
+      display: grid; place-items: center; text-align: center; padding: 24px;
+      transition: opacity .7s ease, visibility .7s;
+    }
+    #gate.gone { opacity: 0; visibility: hidden; }
+    .lambda { width: 132px; height: 132px; margin: 0 auto 28px; }
+    .lambda circle { stroke-dasharray: 360; stroke-dashoffset: 360; animation: draw 1.6s .2s ease-out forwards; }
+    .lambda path { stroke-dasharray: 120; stroke-dashoffset: 120; animation: draw 1s 1.2s ease-out forwards; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+    #gate h1 { font-weight: 300; font-size: clamp(22px, 5vw, 34px); letter-spacing: .32em; margin: 0 0 10px; text-transform: uppercase; padding-left: .32em; }
+    #gate .tagline { color: var(--dim); letter-spacing: .25em; font-size: 13px; text-transform: uppercase; margin-bottom: 38px; }
+    .gate-actions { display: flex; flex-direction: column; gap: 12px; align-items: center; }
+    .enter {
+      background: var(--inv-bg); color: var(--inv-fg); border: 1px solid var(--inv-bg);
+      padding: 12px 26px; letter-spacing: .18em; text-transform: uppercase; font-weight: 600; cursor: pointer; font-size: 14px;
+    }
+    .enter:hover { background: transparent; color: var(--fg); }
+    .quiet { background: none; border: 0; color: var(--dim); cursor: pointer; letter-spacing: .1em; font-size: 13px; text-decoration: underline; text-underline-offset: 3px; }
+    .quiet:hover { color: var(--fg); }
+    #gate .note { margin-top: 34px; color: var(--faint); font-size: 12px; letter-spacing: .1em; }
+
+    /* ================= TARJETA DE CAPÍTULO ================= */
+    #chapter {
+      position: fixed; inset: 0; z-index: 20; display: grid; place-items: center; text-align: center;
+      background: color-mix(in srgb, var(--bg) 88%, transparent); pointer-events: none;
+      opacity: 0; transition: opacity .45s ease; padding: 24px;
+    }
+    #chapter.show { opacity: 1; }
+    #chapter .n { color: var(--dim); letter-spacing: .5em; font-size: 12px; padding-left: .5em; }
+    #chapter .t { font-size: clamp(22px, 5vw, 40px); font-weight: 300; letter-spacing: .28em; padding-left: .28em; margin-top: 10px; text-transform: uppercase; }
+    #chapter .o { color: var(--faint); font-size: 12px; letter-spacing: .3em; margin-top: 12px; text-transform: uppercase; }
+
+    /* ================= BARRA SUPERIOR ================= */
     .top {
       position: sticky; top: 0; z-index: 5; background: var(--bar); border-bottom: 1px solid var(--border);
       display: flex; align-items: center; justify-content: space-between; gap: 12px;
       padding: 0 16px; height: 40px; font-size: 13px; color: var(--dim);
     }
-    .tab { color: var(--fg); display: flex; align-items: center; gap: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .tab b { color: var(--green); font-weight: 600; }
+    .tab { color: var(--fg); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .top-actions { display: flex; gap: 4px; flex: none; }
-    .top button { font: inherit; color: var(--dim); background: none; border: 1px solid transparent; border-radius: 6px; padding: 3px 8px; cursor: pointer; }
+    .top button { color: var(--dim); background: none; border: 1px solid transparent; padding: 3px 8px; cursor: pointer; }
     .top button:hover { color: var(--fg); border-color: var(--border); }
 
-    /* ---------- terminal ---------- */
-    main { max-width: 980px; margin: 0 auto; padding: 18px 16px 150px; }
-    .blk { margin: 0 0 14px; animation: in .18s ease-out; }
-    @keyframes in { from { opacity: 0; transform: translateY(3px); } to { opacity: 1; transform: none; } }
-    .echo { margin: 22px 0 8px; color: var(--fg); word-break: break-word; }
-    .ps1 { color: var(--green); font-weight: 600; white-space: nowrap; }
-    .ps1 .path { color: var(--cyan); }
-    pre { font: inherit; margin: 0; }
+    /* ================= TERMINAL ================= */
+    main { max-width: 900px; margin: 0 auto; padding: 22px 16px 160px; }
+    .blk { margin: 0 0 14px; }
+    .echo { margin: 26px 0 8px; word-break: break-word; }
+    .ps1 { font-weight: 600; white-space: nowrap; }
+    .ps1 .path { color: var(--dim); }
     .dim { color: var(--dim); }
-    .g { color: var(--green); }
-    .a { color: var(--amber); }
-    .c { color: var(--cyan); }
-    .r { color: var(--red); }
-    .h { color: var(--amber); font-weight: 700; margin-bottom: 10px; }
-    .ascii { color: var(--green); line-height: 1; font-size: 13px; margin-bottom: 12px; white-space: pre; overflow: hidden; }
-    @media (max-width: 640px) { .ascii { font-size: 7.4px; } }
+    .faint { color: var(--faint); }
+    .inv { background: var(--inv-bg); color: var(--inv-fg); padding: 0 6px; }
+    .boot { color: var(--dim); }
+    .boot .ok { color: var(--fg); }
+    .caphead { margin: 30px 0 12px; display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+    .caphead .num { background: var(--inv-bg); color: var(--inv-fg); padding: 0 8px; font-size: 12px; letter-spacing: .2em; }
+    .caphead .tt { letter-spacing: .2em; text-transform: uppercase; font-weight: 600; }
+    .caphead .oo { color: var(--faint); font-size: 12px; letter-spacing: .15em; text-transform: uppercase; }
+    .letter p { max-width: 68ch; }
+    .quote { border-left: 2px solid var(--fg); padding: 2px 0 2px 16px; margin: 18px 0; font-style: italic; max-width: 68ch; }
+    .quote .dim { font-style: normal; display: block; margin-top: 4px; }
+    .caret::after { content: "▌"; animation: blink 1s steps(1) infinite; margin-left: 1px; }
+    @keyframes blink { 50% { opacity: 0; } }
 
-    /* tablas tipo "ls" / clave-valor */
-    .rows { display: grid; grid-template-columns: max-content 1fr; column-gap: 22px; row-gap: 4px; }
+    .rows { display: grid; grid-template-columns: max-content 1fr; column-gap: 24px; row-gap: 5px; }
     .rows > :nth-child(odd) { color: var(--dim); }
     @media (max-width: 560px) {
       .rows { grid-template-columns: 1fr; row-gap: 0; }
-      .rows > :nth-child(even) { margin-bottom: 8px; }
+      .rows > :nth-child(even) { margin-bottom: 9px; }
     }
     button.cmd {
-      font: inherit; color: var(--cyan); background: none; border: 0; padding: 0; cursor: pointer;
-      border-bottom: 1px dashed currentColor; text-align: left;
+      color: var(--fg); background: none; border: 0; padding: 0; cursor: pointer;
+      text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; text-align: left;
     }
-    button.cmd:hover { color: var(--green); }
+    button.cmd:hover { background: var(--inv-bg); color: var(--inv-fg); text-decoration: none; }
 
-    /* casos de proyecto */
-    .case-title { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; margin-bottom: 10px; }
-    .case-title strong { color: var(--fg); font-size: 17px; }
-    .tag { font-size: 12px; padding: 1px 8px; border: 1px solid currentColor; border-radius: 4px; }
-    figure { margin: 4px 0 14px; max-width: 760px; }
-    figure img { display: block; width: 100%; height: auto; border: 1px solid var(--border); border-radius: 6px; background: var(--bar); }
+    .case-title { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; margin-bottom: 12px; }
+    .case-title strong { font-size: 17px; }
+    .tag { font-size: 11.5px; padding: 0 8px; letter-spacing: .15em; border: 1px solid var(--fg); }
+    .tag.solid { background: var(--inv-bg); color: var(--inv-fg); }
+    figure { margin: 4px 0 16px; max-width: 760px; }
+    figure img { display: block; width: 100%; height: auto; border: 1px solid var(--border); filter: grayscale(1) contrast(1.05); transition: filter .5s ease; }
+    figure:hover img, figure:active img { filter: none; }
     figcaption { color: var(--dim); font-size: 12.5px; margin-top: 6px; }
-    .quote { border-left: 2px solid var(--amber); padding: 2px 0 2px 14px; margin: 14px 0; font-style: italic; }
-    .quote .dim { font-style: normal; display: block; margin-top: 4px; }
 
-    /* ecualizador del comando musica */
-    .eq { display: inline-flex; gap: 3px; align-items: flex-end; height: 16px; margin-left: 10px; vertical-align: -2px; }
-    .eq i { width: 4px; background: var(--green); animation: eq 1s ease-in-out infinite; }
-    .eq i:nth-child(2) { animation-delay: -.3s; } .eq i:nth-child(3) { animation-delay: -.6s; }
-    .eq i:nth-child(4) { animation-delay: -.15s; } .eq i:nth-child(5) { animation-delay: -.45s; }
-    @keyframes eq { 0%, 100% { height: 4px; } 50% { height: 16px; } }
-
-    /* ---------- línea de comando ---------- */
-    .prompt { display: flex; align-items: center; gap: 10px; margin-top: 18px; }
+    .prompt { display: flex; align-items: center; gap: 10px; margin-top: 20px; }
     .prompt label { flex: none; }
     #cmd {
       flex: 1; min-width: 0; font: inherit; font-size: 16px; color: var(--fg); background: transparent;
-      border: 0; outline: none; caret-color: var(--green); padding: 2px 0;
+      border: 0; outline: none; caret-color: var(--fg); padding: 2px 0;
     }
-    #cmd::placeholder { color: var(--dim); opacity: .7; }
+    #cmd::placeholder { color: var(--faint); }
 
-    /* ---------- atajos + barra de estado ---------- */
+    /* ================= DOCK: atajos + reproductor ================= */
     .dock { position: fixed; left: 0; right: 0; bottom: 0; z-index: 5; background: var(--bar); border-top: 1px solid var(--border); padding-bottom: env(safe-area-inset-bottom); }
-    .chips { display: flex; gap: 6px; padding: 8px 16px; overflow-x: auto; scrollbar-width: none; max-width: 980px; margin: 0 auto; }
+    .chips { display: flex; gap: 6px; padding: 8px 16px 6px; overflow-x: auto; scrollbar-width: none; max-width: 900px; margin: 0 auto; }
     .chips::-webkit-scrollbar { display: none; }
     .chips button {
-      font: inherit; font-size: 13px; flex: none; color: var(--fg); background: var(--bg);
-      border: 1px solid var(--border); border-radius: 6px; padding: 4px 10px; cursor: pointer;
+      font-size: 13px; flex: none; color: var(--fg); background: var(--bg);
+      border: 1px solid var(--border); padding: 3px 10px; cursor: pointer;
     }
-    .chips button:hover { border-color: var(--green); color: var(--green); }
-    .status { display: flex; justify-content: space-between; gap: 12px; padding: 2px 16px 4px; font-size: 12px; color: var(--dim); max-width: 980px; margin: 0 auto; }
-    .status .live::before { content: "●"; color: var(--green); margin-right: 6px; }
-    @media (max-width: 520px) { .status .hide-sm { display: none; } }
+    .chips button:hover { background: var(--inv-bg); color: var(--inv-fg); border-color: var(--inv-bg); }
+    .player { display: flex; align-items: center; gap: 12px; padding: 2px 16px 6px; font-size: 12px; color: var(--dim); max-width: 900px; margin: 0 auto; }
+    #playBtn { background: none; border: 1px solid var(--border); color: var(--fg); width: 26px; height: 22px; padding: 0; cursor: pointer; font-size: 11px; flex: none; }
+    #playBtn:hover { background: var(--inv-bg); color: var(--inv-fg); }
+    #np { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    #viz { flex: 1; min-width: 40px; height: 18px; display: block; }
+    #clock { flex: none; }
+    @media (max-width: 520px) { .player .hide-sm { display: none; } }
 
     @media (prefers-reduced-motion: reduce) {
-      .blk { animation: none; }
-      .eq i { animation: none; height: 10px; }
+      .lambda circle, .lambda path { animation: none; stroke-dashoffset: 0; }
+      #gate, #chapter, figure img { transition: none; }
+      .caret::after { animation: none; }
     }
     noscript { display: block; max-width: 760px; margin: 0 auto; padding: 24px 16px; }
   </style>
 </head>
 <body>
 
+<!-- ================= PUERTA ================= -->
+<div id="gate" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
+  <div>
+    <svg class="lambda" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+      <circle cx="60" cy="60" r="54" stroke="currentColor" stroke-width="3"/>
+      <path d="M40 92 L60 52 M48 30 L82 92" stroke="currentColor" stroke-width="7" stroke-linecap="square"/>
+    </svg>
+    <h1 id="gateTitle">Bruno Savarella</h1>
+    <div class="tagline">dj · programador · software</div>
+    <div class="gate-actions">
+      <button class="enter" id="enterSound" type="button">▶ Entrar con sonido</button>
+      <button class="quiet" id="enterQuiet" type="button">entrar sin sonido</button>
+    </div>
+    <div class="note">Enter para entrar · recomendado con auriculares</div>
+  </div>
+</div>
+
+<div id="chapter" aria-hidden="true"><div><div class="n" id="chN"></div><div class="t" id="chT"></div><div class="o" id="chO"></div></div></div>
+
 <header class="top">
-  <div class="tab"><b>&gt;_</b> bruno@cordoba: ~</div>
+  <div class="tab">λ bruno@cordoba: ~</div>
   <div class="top-actions">
     <button type="button" data-cmd="simple" title="Ver todo junto, sin comandos">modo simple</button>
-    <button type="button" id="themeBtn" title="Cambiar tema claro/oscuro">tema</button>
+    <button type="button" id="themeBtn" title="Invertir colores">invertir</button>
   </div>
 </header>
 
@@ -154,7 +206,7 @@
 
   <noscript>
     <h1>Bruno Savarella</h1>
-    <p>Desarrollador Python &amp; JavaScript · Ciberseguridad, visión por computadora y desarrollo con IA · Córdoba, Argentina.</p>
+    <p>DJ, programador y obsesivo del software · Córdoba, Argentina.</p>
     <p>Proyectos: A&amp;M Piscinas (cotizador online y CRM en producción, <a href="https://aym-piscinas.pages.dev">sitio</a>),
       <a href="https://github.com/Brun02005/control-acceso-facial">control de acceso biométrico</a>,
       <a href="https://github.com/Brun02005/BLUE-DAR">BLUE-DAR</a>,
@@ -168,19 +220,21 @@
 
 <div class="dock">
   <nav class="chips" aria-label="Comandos rápidos">
-    <button type="button" data-cmd="whoami">whoami</button>
+    <button type="button" data-cmd="carta">carta</button>
     <button type="button" data-cmd="proyectos">proyectos</button>
-    <button type="button" data-cmd="historia">historia</button>
-    <button type="button" data-cmd="stack">stack</button>
     <button type="button" data-cmd="musica">musica</button>
+    <button type="button" data-cmd="drop">drop</button>
+    <button type="button" data-cmd="stack">stack</button>
     <button type="button" data-cmd="servicios">servicios</button>
     <button type="button" data-cmd="contacto">contacto</button>
     <button type="button" data-cmd="help">help</button>
     <button type="button" data-cmd="clear">clear</button>
   </nav>
-  <div class="status">
-    <span class="live">disponible · freelance y equipos</span>
-    <span><span class="hide-sm">Córdoba, AR · </span><span id="clock">--:--</span></span>
+  <div class="player">
+    <button type="button" id="playBtn" aria-label="Reproducir música">▶</button>
+    <span id="np">bruno.js · <span id="bpmLbl">122</span> bpm</span>
+    <canvas id="viz" aria-hidden="true"></canvas>
+    <span id="clock"><span class="hide-sm">Córdoba </span><span id="time">--:--</span></span>
   </div>
 </div>
 
@@ -193,8 +247,167 @@
   var form = document.getElementById("form");
   var root = document.documentElement;
   var touch = matchMedia("(hover: none)").matches;
+  var reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  // ---------------- utilidades ----------------
+  // =====================================================================
+  //  bruno.js — un tema de house escrito en Web Audio. Nada pregrabado:
+  //  cada bombo, hi-hat y acorde se sintetiza en vivo en el navegador.
+  // =====================================================================
+  var Mix = (function () {
+    var ctx, master, analyser, noise, timer;
+    var bpm = 122, step = 0, nextTime = 0, playing = false, breakUntil = -1;
+    // Am7 · Fmaj7 · Dm7 · Em7 (dos compases cada uno)
+    var CHORDS = [[220, 261.63, 329.63, 392], [174.61, 220, 261.63, 329.63], [146.83, 174.61, 220, 261.63], [164.81, 196, 246.94, 293.66]];
+    var ROOTS = [110, 87.31, 73.42, 82.41];
+    var listeners = [];
+
+    function init() {
+      if (ctx) return;
+      ctx = new (window.AudioContext || window.webkitAudioContext)();
+      master = ctx.createGain(); master.gain.value = 0;
+      var comp = ctx.createDynamicsCompressor();
+      analyser = ctx.createAnalyser(); analyser.fftSize = 128;
+      master.connect(comp); comp.connect(analyser); analyser.connect(ctx.destination);
+      noise = ctx.createBuffer(1, ctx.sampleRate, ctx.sampleRate);
+      var d = noise.getChannelData(0);
+      for (var i = 0; i < d.length; i++) d[i] = Math.random() * 2 - 1;
+    }
+    function env(g, t, peak, attack, decay) {
+      g.gain.setValueAtTime(0.0001, t);
+      g.gain.exponentialRampToValueAtTime(peak, t + attack);
+      g.gain.exponentialRampToValueAtTime(0.0001, t + attack + decay);
+    }
+    function kick(t) {
+      var o = ctx.createOscillator(), g = ctx.createGain();
+      o.frequency.setValueAtTime(150, t); o.frequency.exponentialRampToValueAtTime(44, t + 0.11);
+      env(g, t, 0.95, 0.003, 0.42);
+      o.connect(g); g.connect(master); o.start(t); o.stop(t + 0.5);
+    }
+    function noiseHit(t, type, freq, q, peak, decay) {
+      var s = ctx.createBufferSource(), f = ctx.createBiquadFilter(), g = ctx.createGain();
+      s.buffer = noise; f.type = type; f.frequency.value = freq; f.Q.value = q;
+      env(g, t, peak, 0.002, decay);
+      s.connect(f); f.connect(g); g.connect(master);
+      s.start(t, Math.random() * 0.5); s.stop(t + decay + 0.05);
+    }
+    function clap(t) { [0, 0.011, 0.023].forEach(function (o) { noiseHit(t + o, "bandpass", 1500, 0.9, 0.32, 0.16); }); }
+    function bass(t, freq, dur) {
+      var o = ctx.createOscillator(), f = ctx.createBiquadFilter(), g = ctx.createGain();
+      o.type = "sawtooth"; o.frequency.value = freq;
+      f.type = "lowpass"; f.Q.value = 7;
+      f.frequency.setValueAtTime(1100, t); f.frequency.exponentialRampToValueAtTime(160, t + dur);
+      env(g, t, 0.26, 0.008, dur);
+      o.connect(f); f.connect(g); g.connect(master); o.start(t); o.stop(t + dur + 0.05);
+    }
+    function pad(t, freqs, dur) {
+      var f = ctx.createBiquadFilter(), g = ctx.createGain();
+      f.type = "lowpass"; f.frequency.value = 1300;
+      g.gain.setValueAtTime(0.0001, t);
+      g.gain.linearRampToValueAtTime(0.055, t + 0.9);
+      g.gain.setValueAtTime(0.055, t + dur - 0.6);
+      g.gain.linearRampToValueAtTime(0.0001, t + dur);
+      f.connect(g); g.connect(master);
+      freqs.forEach(function (fr) {
+        [-7, 7].forEach(function (cents) {
+          var o = ctx.createOscillator(); o.type = "sawtooth"; o.frequency.value = fr; o.detune.value = cents;
+          o.connect(f); o.start(t); o.stop(t + dur + 0.05);
+        });
+      });
+    }
+    function playStep(s, t) {
+      var st = s % 16, bar = Math.floor(s / 16);
+      var chord = Math.floor(bar / 2) % 4;
+      var inBreak = bar < breakUntil || (bar % 32 >= 30);   // pausa cada 32 compases
+      var intro = bar < 4;
+      var sixteenth = 60 / bpm / 4;
+      if (st === 0 && bar % 2 === 0) pad(t, CHORDS[chord], sixteenth * 32);
+      if (!intro && !inBreak && st % 4 === 0) kick(t);
+      if (st % 4 === 2) noiseHit(t, "highpass", 7500, 0.7, intro ? 0.08 : 0.16, 0.09);
+      if (!intro && !inBreak && st % 2 === 1) noiseHit(t, "highpass", 9000, 0.7, 0.045, 0.03);
+      if (bar >= 8 && !inBreak && (st === 4 || st === 12)) clap(t);
+      if (!intro && [2, 6, 10, 14].indexOf(st) >= 0) bass(t, ROOTS[chord] * (st === 14 && bar % 4 === 3 ? 2 : 1), sixteenth * 1.6);
+    }
+    function scheduler() {
+      while (nextTime < ctx.currentTime + 0.12) {
+        playStep(step, nextTime);
+        nextTime += 60 / bpm / 4;
+        step++;
+      }
+    }
+    function emit() { listeners.forEach(function (fn) { fn(); }); }
+    return {
+      play: function () {
+        init();
+        if (playing) return;
+        ctx.resume();
+        playing = true;
+        nextTime = ctx.currentTime + 0.05;
+        master.gain.cancelScheduledValues(ctx.currentTime);
+        master.gain.setValueAtTime(master.gain.value, ctx.currentTime);
+        master.gain.linearRampToValueAtTime(0.42, ctx.currentTime + 2.5);
+        timer = setInterval(scheduler, 25);
+        emit();
+      },
+      stop: function () {
+        if (!playing) return;
+        playing = false;
+        clearInterval(timer);
+        master.gain.cancelScheduledValues(ctx.currentTime);
+        master.gain.setValueAtTime(master.gain.value, ctx.currentTime);
+        master.gain.linearRampToValueAtTime(0, ctx.currentTime + 0.4);
+        setTimeout(function () { if (!playing) ctx.suspend(); }, 500);
+        emit();
+      },
+      toggle: function () { this.playing() ? this.stop() : this.play(); },
+      playing: function () { return playing; },
+      bpm: function (v) { if (v) { bpm = Math.max(80, Math.min(150, v)); emit(); } return bpm; },
+      drop: function () { breakUntil = Math.floor(step / 16) + 3; },
+      analyser: function () { return analyser; },
+      suspend: function () { if (ctx && playing) ctx.suspend(); },
+      resume: function () { if (ctx && playing) ctx.resume(); },
+      on: function (fn) { listeners.push(fn); }
+    };
+  })();
+
+  // Reproductor del dock
+  var playBtn = document.getElementById("playBtn");
+  var bpmLbl = document.getElementById("bpmLbl");
+  Mix.on(function () {
+    playBtn.textContent = Mix.playing() ? "❚❚" : "▶";
+    playBtn.setAttribute("aria-label", Mix.playing() ? "Pausar música" : "Reproducir música");
+    bpmLbl.textContent = Mix.bpm();
+  });
+  playBtn.addEventListener("click", function (e) { e.stopPropagation(); Mix.toggle(); });
+  document.addEventListener("visibilitychange", function () { document.hidden ? Mix.suspend() : Mix.resume(); });
+
+  // Visualizador en blanco y negro
+  var viz = document.getElementById("viz"), vctx = viz.getContext("2d"), vdata = null;
+  function drawViz() {
+    var w = viz.clientWidth, h = viz.clientHeight, dpr = devicePixelRatio || 1;
+    if (viz.width !== w * dpr) { viz.width = w * dpr; viz.height = h * dpr; }
+    vctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    vctx.clearRect(0, 0, w, h);
+    var color = getComputedStyle(root).getPropertyValue("--fg").trim() || "#fff";
+    vctx.fillStyle = color;
+    var an = Mix.analyser(), bars = Math.max(8, Math.floor(w / 5));
+    if (an && Mix.playing()) {
+      vdata = vdata || new Uint8Array(an.frequencyBinCount);
+      an.getByteFrequencyData(vdata);
+      for (var i = 0; i < bars; i++) {
+        var v = vdata[Math.floor(i / bars * vdata.length * 0.75)] / 255;
+        var bh = Math.max(1, v * h);
+        vctx.fillRect(i * 5, h - bh, 3, bh);
+      }
+    } else {
+      for (var j = 0; j < bars; j++) vctx.fillRect(j * 5, h - 1, 3, 1);
+    }
+    requestAnimationFrame(drawViz);
+  }
+  requestAnimationFrame(drawViz);
+
+  // =====================================================================
+  //  Terminal
+  // =====================================================================
   function esc(s) {
     return String(s).replace(/[&<>"']/g, function (c) {
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
@@ -214,52 +427,146 @@
     return '<div class="rows">' + pairs.map(function (p) { return "<span>" + p[0] + "</span><span>" + p[1] + "</span>"; }).join("") + "</div>";
   }
   function hint(cmds) {
-    return '<div class="dim" style="margin-top:12px">→ probá: ' + cmds.map(function (c) { return cmdLink(c); }).join(" · ") + "</div>";
+    return '<div class="dim" style="margin-top:12px">→ ' + cmds.map(function (c) { return cmdLink(c); }).join(" · ") + "</div>";
   }
   function ext(url, label) {
     return '<a href="' + url + '" target="_blank" rel="noopener">' + label + " ↗</a>";
   }
 
-  // ---------------- contenido ----------------
-  var LETTERS = {
-    B: ["██████╗ ", "██╔══██╗", "██████╔╝", "██╔══██╗", "██████╔╝", "╚═════╝ "],
-    R: ["██████╗ ", "██╔══██╗", "██████╔╝", "██╔══██╗", "██║  ██║", "╚═╝  ╚═╝"],
-    U: ["██╗   ██╗", "██║   ██║", "██║   ██║", "██║   ██║", "╚██████╔╝", " ╚═════╝ "],
-    N: ["███╗   ██╗", "████╗  ██║", "██╔██╗ ██║", "██║╚██╗██║", "██║ ╚████║", "╚═╝  ╚═══╝"],
-    O: [" ██████╗ ", "██╔═══██╗", "██║   ██║", "██║   ██║", "╚██████╔╝", " ╚═════╝ "]
-  };
-  var ASCII = [0, 1, 2, 3, 4, 5].map(function (i) {
-    return "BRUNO".split("").map(function (l) { return LETTERS[l][i]; }).join("");
-  }).join("\n").replace(/[╗╔╝╚═║]/g, " ").replace(/ +$/gm, "");  // solo bloques: las sombras se superponen
+  // ---------------- la carta ----------------
+  var CHAPTERS = [
+    { n: "CAPÍTULO 1", t: "Córdoba Inbound", o: "black mesa inbound", p: [
+      "Me llamo Bruno. Soy de Córdoba y desde siempre me obsesiona lo mismo: crear cosas que antes no existían.",
+      "A veces es un set de música. A veces es software. Para mí son lo mismo: elegir qué va con qué, cuidar cada transición y pensar en quien está del otro lado."
+    ]},
+    { n: "CAPÍTULO 2", t: "Materiales anómalos", o: "anomalous materials", p: [
+      "No empecé en un laboratorio: empecé vendiendo piscinas. En A&M Piscinas los clientes vivían en papel. Cuadernos, carpetas, llamadas que nadie devolvía.",
+      "Algo no funcionaba, y yo no podía dejar de verlo."
+    ]},
+    { n: "CAPÍTULO 3", t: "Consecuencias imprevistas", o: "unforeseen consequences", p: [
+      "Así que escribí mi primer sistema de verdad. Digitalicé la gestión de clientes y las ventas subieron un 10 %.",
+      "Fue mi cascada de resonancia: entendí que programar era la herramienta más poderosa que tenía para crear."
+    ]},
+    { n: "CAPÍTULO 4", t: "Sobre rieles", o: "on a rail", p: [
+      "Hoy estudio Ingeniería en Sistemas en la UTN, me formo en ciberseguridad y construyo sin parar: una plataforma en producción, un control de acceso biométrico, una herramienta de auditoría Bluetooth y un tutor de matemática con IA.",
+      "Y WaveLoad, que nació de mi otra pasión: la cabina. Tenía cientos de temas y ninguna herramienta que los ordenara como yo quería. Así que la hice."
+    ]},
+    { n: "CAPÍTULO 5", t: "Núcleo lambda", o: "lambda core", p: [
+      "Steve Jobs decía que la tecnología sola no alcanza: que tiene que casarse con las humanidades para que el resultado haga cantar el corazón. Eso busco en todo lo que hago.",
+      "Ah, y una cosa más. La música que está sonando no es de nadie más: está escrita en JavaScript, en esta misma página. Programar y pinchar, al mismo tiempo."
+    ]}
+  ];
+  var GMAN = '<div class="quote">"The right man in the wrong place can make all the difference in the world."<span class="dim">— G-Man, Half-Life 2</span></div>';
 
+  // Secuencias animadas que se pueden saltear con cualquier tecla o clic.
+  var skipping = false, sequenceRunning = false;
+  function wait(ms) { return new Promise(function (r) { setTimeout(r, skipping || reduced ? 0 : ms); }); }
+  function typeInto(el, text, cps) {
+    return new Promise(function (resolve) {
+      if (skipping || reduced) { el.textContent = text; return resolve(); }
+      var i = 0, perFrame = Math.max(1, Math.round((cps || 140) / 60));
+      el.classList.add("caret");
+      (function frame() {
+        if (skipping) i = text.length; else i += perFrame;
+        el.textContent = text.slice(0, i);
+        keepBottom();
+        if (i < text.length) requestAnimationFrame(frame);
+        else { el.classList.remove("caret"); resolve(); }
+      })();
+    });
+  }
+  function keepBottom() {
+    if (sequenceRunning) scrollTo(0, document.body.scrollHeight);
+  }
+  var chapterEl = document.getElementById("chapter");
+  function chapterCard(ch) {
+    if (skipping || reduced) return Promise.resolve();
+    document.getElementById("chN").textContent = ch.n;
+    document.getElementById("chT").textContent = ch.t;
+    document.getElementById("chO").textContent = ch.o;
+    chapterEl.classList.add("show");
+    return wait(1500).then(function () { chapterEl.classList.remove("show"); return wait(450); });
+  }
+
+  function runSequence(fn) {
+    skipping = false; sequenceRunning = true;
+    return fn().then(function () { sequenceRunning = false; skipping = false; chapterEl.classList.remove("show"); });
+  }
+  function skip() { if (sequenceRunning) skipping = true; }
+
+  function boot() {
+    var lines = [
+      ["inicializando sistema de presentación", "ok"],
+      ["calibrando monitores de audio", Mix.playing() ? "ok · 122 bpm" : "en silencio"],
+      ["cargando 5 proyectos", "ok"],
+      ["verificando permisos (mínimo privilegio)", "ok"],
+      ["detectando visitante", "ok"]
+    ];
+    var b = block('<div class="boot"><div>λ BRUNO OS · Mark IV</div></div>');
+    var box = b.firstChild;
+    return lines.reduce(function (p, l) {
+      return p.then(function () {
+        var row = document.createElement("div");
+        var dots = new Array(Math.max(3, 44 - l[0].length)).join(".");
+        row.innerHTML = "&gt; " + esc(l[0]) + ' <span class="faint">' + dots + '</span> <span class="ok">' + esc(l[1]) + "</span>";
+        box.appendChild(row); keepBottom();
+        return wait(230);
+      });
+    }, Promise.resolve()).then(function () { return wait(350); });
+  }
+
+  function letter() {
+    var wrap = block('<div class="dim">Rise and shine, visitante. <span class="faint">Rise and… shine.</span></div>', "letter");
+    return CHAPTERS.reduce(function (p, ch) {
+      return p.then(function () { return chapterCard(ch); }).then(function () {
+        var head = document.createElement("div");
+        head.className = "caphead";
+        head.innerHTML = '<span class="num">' + esc(ch.n) + '</span><span class="tt">' + esc(ch.t) + '</span><span class="oo">' + esc(ch.o) + "</span>";
+        wrap.appendChild(head); keepBottom();
+        return ch.p.reduce(function (pp, text) {
+          return pp.then(function () {
+            var para = document.createElement("p");
+            wrap.appendChild(para);
+            return typeInto(para, text).then(function () { return wait(250); });
+          });
+        }, Promise.resolve());
+      });
+    }, Promise.resolve()).then(function () {
+      var end = document.createElement("div");
+      end.innerHTML = GMAN + hint(["proyectos", "musica", "contacto", "help"]);
+      wrap.appendChild(end); keepBottom();
+    });
+  }
+
+  // ---------------- proyectos ----------------
   var PROJECTS = {
     aym: {
       dir: "aym-piscinas", short: "cotizador online + CRM · en producción",
-      title: "A&amp;M Piscinas — cotizador online y CRM", tag: ["g", "EN PRODUCCIÓN"],
-      img: ["assets/aym-catalogo.png", "assets/aym-hero.png"], caption: "Captura real del sitio en producción.",
+      title: "A&amp;M Piscinas — cotizador online y CRM", tag: "EN PRODUCCIÓN", solid: true,
+      img: ["assets/aym-catalogo.png", "assets/aym-hero.png"], caption: "Captura real del sitio en producción. Pasá el mouse para verla en color.",
       rows: [
         ["problema", "Los clientes se gestionaban en papel y se perdían en el seguimiento."],
         ["decisión", "Digitalizar todo y poner la seguridad donde viven los datos: permisos con Row Level Security en PostgreSQL y claves secretas solo en funciones del servidor."],
-        ["resultado", "La digitalización llevó las ventas <span class=\"g\">+10 %</span>. Hoy los clientes arman su piscina online, ven el precio al instante y reciben el presupuesto en PDF por WhatsApp."],
+        ["resultado", "La digitalización llevó las ventas <span class=\"inv\">+10 %</span>. Hoy los clientes arman su piscina online, ven el precio al instante y reciben el presupuesto en PDF por WhatsApp."],
         ["stack", "JavaScript · Supabase (PostgreSQL, Auth, Storage) · Cloudflare Pages Functions · Turnstile"],
         ["links", ext("https://aym-piscinas.pages.dev", "ver sitio") + ' <span class="dim">· código privado (cliente)</span>']
       ]
     },
     acceso: {
       dir: "control-acceso", short: "reconocimiento facial con prueba de vida",
-      title: "Control de acceso biométrico", tag: ["c", "VISIÓN POR COMPUTADORA"],
+      title: "Control de acceso biométrico", tag: "VISIÓN POR COMPUTADORA",
       img: ["assets/acceso-calibracion.png"], caption: "Calibración real del umbral sobre el benchmark LFW (2.308 identidades).",
       rows: [
         ["problema", "Controlar quién entra sin tarjetas ni llaves, y sin que una foto alcance para engañar al sistema."],
         ["decisión", "Medir el umbral de similitud en vez de elegirlo a ojo. El script sugería 0,22; elegí 0,35: el falso rechazo casi no cambia y la falsa aceptación baja unas 10 veces."],
-        ["resultado", "Falsa aceptación <span class=\"g\">~0,008 %</span> (1 en 12.500) · falso rechazo ~1,4 % · prueba de vida por parpadeo · biometría cifrada en reposo."],
+        ["resultado", "Falsa aceptación <span class=\"inv\">~0,008 %</span> (1 en 12.500) · falso rechazo ~1,4 % · prueba de vida por parpadeo · biometría cifrada en reposo."],
         ["stack", "Python · OpenCV · MediaPipe · InsightFace · ONNX Runtime · cryptography"],
         ["links", ext("https://github.com/Brun02005/control-acceso-facial", "código")]
       ]
     },
     bluedar: {
       dir: "blue-dar", short: "auditoría pasiva de entornos Bluetooth",
-      title: "BLUE-DAR — análisis pasivo de entornos BLE", tag: ["a", "CIBERSEGURIDAD"],
+      title: "BLUE-DAR — análisis pasivo de entornos BLE", tag: "CIBERSEGURIDAD",
       img: ["assets/bluedar.png"], caption: "Interfaz web corriendo con datos simulados.",
       rows: [
         ["problema", "Auditar el entorno Bluetooth sin convertir la herramienta en un rastreador de personas."],
@@ -270,20 +577,20 @@
       ]
     },
     waveload: {
-      dir: "waveload", short: "gestión y análisis de catálogos de audio",
-      title: "WaveLoad — gestión y análisis de audio", tag: ["c", "ESCRITORIO"],
+      dir: "waveload", short: "el software de mi cabina",
+      title: "WaveLoad — el software de mi cabina", tag: "DJ × SOFTWARE", solid: true,
       img: ["assets/waveload.png"], caption: "Vista de la librería: BPM, tono y energía calculados para cada tema.",
       rows: [
-        ["problema", "Una biblioteca de casi 800 temas para pinchar y ninguna herramienta que la organizara como yo quería."],
+        ["problema", "Cientos de temas para pinchar y ninguna herramienta que los organizara como yo quería."],
         ["decisión", "Arquitectura hexagonal (el dominio no sabe nada de la base ni de la interfaz), workers en segundo plano y un motor de consultas que compila filtros de etiquetas a SQL."],
-        ["resultado", "<span class=\"g\">646 tests</span> que corren en menos de un minuto, análisis de la señal de audio y un grafo de compatibilidad entre temas para armar sets."],
+        ["resultado", "<span class=\"inv\">646 tests</span> que corren en menos de un minuto, análisis de BPM, tono y energía, y un grafo de compatibilidad entre temas para armar sets."],
         ["stack", "Python · PySide6 (Qt) · SQLite · librosa · NumPy · NetworkX · pytest"],
-        ["links", ext("https://github.com/Brun02005/WaveLoad", "código") + " · " + cmdLink("musica", "por qué lo hice")]
+        ["links", ext("https://github.com/Brun02005/WaveLoad", "código")]
       ]
     },
     mathvision: {
       dir: "mathvision", short: "tutor de matemática con IA · en desarrollo",
-      title: "MathVision AI — tutor de matemática", tag: ["a", "EN DESARROLLO"],
+      title: "MathVision AI — tutor de matemática", tag: "EN DESARROLLO",
       img: ["assets/mathvision.png"], caption: "Frontend en desarrollo.",
       rows: [
         ["problema", "Un modelo de lenguaje lee muy bien una foto, pero puede equivocarse en un paso de la cuenta y explicarlo con total seguridad."],
@@ -306,81 +613,88 @@
   function figure(srcs, caption) {
     return '<figure data-src="' + srcs.join("|") + '"><img alt="' + esc(caption) + '" loading="lazy"><figcaption>' + caption + "</figcaption></figure>";
   }
-  // Prueba las imágenes en orden y oculta la figura si ninguna existe.
   function wireFigures(scope) {
     scope.querySelectorAll("figure[data-src]").forEach(function (fig) {
-      var list = fig.getAttribute("data-src").split("|");
-      var img = fig.querySelector("img");
-      var i = 0;
+      var list = fig.getAttribute("data-src").split("|"), img = fig.querySelector("img"), i = 0;
       img.onerror = function () { i++; if (i < list.length) img.src = list[i]; else fig.remove(); };
       img.src = list[0];
     });
   }
 
+  // ---------------- comandos ----------------
   var C = {};
 
   C.help = function () {
     block(rows([
-      [cmdLink("whoami"), "quién soy"],
-      [cmdLink("historia"), "de vender piscinas a programar"],
+      [cmdLink("carta"), "mi carta de presentación, en cinco capítulos"],
       [cmdLink("proyectos"), "lo que construí"],
-      ['<span class="c">ver</span> <span class="dim">&lt;proyecto&gt;</span>', "el caso completo, ej: " + cmdLink("ver aym")],
+      ['ver <span class="dim">&lt;proyecto&gt;</span>', "el caso completo, ej: " + cmdLink("ver waveload")],
+      [cmdLink("musica"), "el tema que suena y cómo manejarlo"],
+      ["play · stop · drop", "controlá la mezcla"],
+      ['bpm <span class="dim">&lt;80-150&gt;</span>', "cambiá el tempo, ej: " + cmdLink("bpm 128")],
       [cmdLink("stack"), "tecnologías que uso"],
       [cmdLink("experiencia"), "dónde trabajo"],
       [cmdLink("formacion"), "estudios y cursos"],
-      [cmdLink("musica"), "mi lado DJ"],
       [cmdLink("servicios"), "cómo te puedo ayudar"],
       [cmdLink("contacto"), "hablemos"],
-      [cmdLink("simple"), "ver todo junto, sin comandos"],
+      [cmdLink("simple"), "todo junto, sin comandos"],
       [cmdLink("clear"), "limpiar la pantalla"]
-    ]) + '<div class="dim" style="margin-top:12px">Tab autocompleta · ↑ ↓ recorren el historial</div>');
+    ]) + '<div class="faint" style="margin-top:12px">Tab autocompleta · ↑ ↓ historial · hay cosas escondidas</div>');
   };
 
-  C.whoami = function () {
-    block('<pre class="ascii" aria-hidden="true">' + ASCII + "</pre>" +
-      '<div><strong>Bruno Savarella</strong> <span class="dim">—</span> desarrollador Python &amp; JavaScript.</div>' +
-      "<div>Ciberseguridad, visión por computadora y desarrollo con IA.</div>" +
-      '<div class="dim">Córdoba, Argentina · Ing. en Sistemas (UTN) · Inglés B2</div>' +
-      hint(["historia", "proyectos", "contacto"]));
-  };
-
-  C.historia = function () {
-    block('<div class="h"># historia.md</div>' +
-      "<p>Siempre me gustó crear. Antes de escribir código ya armaba cosas: campañas, sets de música, formas nuevas de hacer lo de siempre.</p>" +
-      "<p>Empecé en ventas y marketing en A&amp;M Piscinas. Ahí aprendí lo más importante: escuchar. Cuando vi que el papel nos hacía perder clientes, construí mi primer sistema de verdad. Las ventas subieron un 10 % y entendí que programar era otra forma de crear.</p>" +
-      "<p>Hoy estudio Ingeniería en Sistemas en la UTN, me formo en ciberseguridad y construyo proyectos que juntan lo que me apasiona: diseño, música, seguridad e inteligencia artificial.</p>" +
-      "<p>Mi referente es <span class=\"a\">Steve Jobs</span>. No por los productos en sí, sino por su obsesión de unir la tecnología con lo humano y cuidar cada detalle, incluso los que nadie ve.</p>" +
-      '<div class="quote">"No podés unir los puntos mirando hacia adelante; solo podés unirlos mirando hacia atrás."<span class="dim">— Steve Jobs, Stanford, 2005</span></div>' +
-      "<p>Vender piscinas, mezclar música y programar parecían caminos distintos. Mirando hacia atrás, son los mismos puntos.</p>" +
-      hint(["proyectos", "musica"]));
+  C.carta = function () {
+    return runSequence(letter);
   };
 
   C.proyectos = function () {
     block('<div class="dim">total ' + ORDER.length + "</div>" + rows(ORDER.map(function (k) {
-      var p = PROJECTS[k];
-      return ['<span class="dim">drwxr-x</span> ' + cmdLink("ver " + k, p.dir + "/"), p.short];
-    })) + '<div class="dim" style="margin-top:12px">→ tocá un nombre o escribí <span class="c">ver aym</span></div>');
+      return ['<span class="faint">drwxr-x</span> ' + cmdLink("ver " + k, PROJECTS[k].dir + "/"), PROJECTS[k].short];
+    })) + '<div class="dim" style="margin-top:12px">→ tocá un nombre o escribí <span class="inv">ver aym</span></div>');
   };
 
   C.ver = function (arg) {
     var key = PROJECT_ALIAS[(arg || "").toLowerCase().replace(/\/$/, "")];
     if (!key) {
-      block((arg ? '<span class="r">no existe el proyecto: ' + esc(arg) + "</span><br>" : "") +
+      block((arg ? "no existe el proyecto: " + esc(arg) + "<br>" : "") +
         "Proyectos: " + ORDER.map(function (k) { return cmdLink("ver " + k, k); }).join(" · "));
       return;
     }
     var p = PROJECTS[key];
     var next = ORDER[(ORDER.indexOf(key) + 1) % ORDER.length];
-    var b = block('<div class="case-title"><strong>' + p.title + '</strong><span class="tag ' + p.tag[0] + '">' + p.tag[1] + "</span></div>" +
+    var b = block('<div class="case-title"><strong>' + p.title + '</strong><span class="tag' + (p.solid ? " solid" : "") + '">' + p.tag + "</span></div>" +
       figure(p.img, p.caption) + rows(p.rows) + hint(["ver " + next, "proyectos"]));
     wireFigures(b);
+  };
+
+  C.musica = function () {
+    block('<div style="margin-bottom:10px"><span class="inv">♪ bruno.js</span> <span class="dim">· house · ' + Mix.bpm() + " bpm · " + (Mix.playing() ? "sonando" : "en pausa") + "</span></div>" +
+      "<p>Lo que suena no es un archivo de audio. Es código: cada bombo, cada hi-hat y cada acorde se sintetiza en vivo en tu navegador con la Web Audio API. Am7, Fmaj7, Dm7, Em7, y un bajo que responde a contratiempo.</p>" +
+      "<p>Pincho desde antes de programar. Para mí, armar un set y diseñar software se parecen: elegir qué va con qué, cuidar las transiciones y leer a quien está del otro lado.</p>" +
+      rows([
+        [cmdLink(Mix.playing() ? "stop" : "play"), Mix.playing() ? "pausar" : "reproducir"],
+        [cmdLink("drop"), "un break y vuelve el bombo"],
+        [cmdLink("bpm 128"), "más rápido (80 a 150)"]
+      ]) + hint(["ver waveload"]));
+  };
+  C.play = function () { Mix.play(); block('<span class="dim">▶ bruno.js · ' + Mix.bpm() + " bpm</span>"); };
+  C.stop = function () { Mix.stop(); block('<span class="dim">❚❚ en pausa · escribí ' + cmdLink("play") + " para volver</span>"); };
+  C.drop = function () {
+    if (!Mix.playing()) Mix.play();
+    Mix.drop();
+    block('<span class="dim">break… el bombo vuelve en unos compases. Esperalo.</span>');
+  };
+  C.bpm = function (arg) {
+    var v = parseInt(arg, 10);
+    if (!v) { block("tempo actual: " + Mix.bpm() + ' bpm <span class="dim">· usá: bpm 128</span>'); return; }
+    Mix.bpm(v);
+    block('<span class="dim">tempo: ' + Mix.bpm() + " bpm</span>");
   };
 
   C.stack = function () {
     block(rows([
       ["lenguajes", "Python · JavaScript · SQL · HTML/CSS"],
       ["backend", "FastAPI · Supabase · PostgreSQL · SQLite · Cloudflare Pages Functions"],
-      ["frontend", "React · Vite · Tailwind"],
+      ["frontend", "React · Vite · Tailwind · Web Audio API"],
       ["visión e IA", "OpenCV · MediaPipe · InsightFace · Gemini API · SymPy"],
       ["escritorio", "PySide6 (Qt)"],
       ["calidad", "pytest · Git · GitHub Actions"],
@@ -390,8 +704,8 @@
 
   C.experiencia = function () {
     block(rows([
-      ['<span class="a">2026 — hoy</span>', "<strong>Analista de datos y desarrollo web</strong> · A&amp;M Piscinas<br><span class=\"dim\">Gestiono la información de la empresa, automatizo flujos de trabajo y desarrollé su plataforma web y su sistema de gestión.</span>"],
-      ['<span class="a">2024 — 2026</span>', "<strong>Director de ventas y marketing</strong> · A&amp;M Piscinas<br><span class=\"dim\">Atención al cliente y publicidad. Digitalicé la gestión de clientes que se llevaba en papel: ventas +10 %.</span>"]
+      ["2026 — hoy", "<strong>Analista de datos y desarrollo web</strong> · A&amp;M Piscinas<br><span class=\"dim\">Gestiono la información de la empresa, automatizo flujos de trabajo y desarrollé su plataforma web y su sistema de gestión.</span>"],
+      ["2024 — 2026", "<strong>Director de ventas y marketing</strong> · A&amp;M Piscinas<br><span class=\"dim\">Atención al cliente y publicidad. Digitalicé la gestión de clientes que se llevaba en papel: ventas +10 %.</span>"]
     ]));
   };
 
@@ -405,20 +719,12 @@
     ]));
   };
 
-  C.musica = function () {
-    block('<div class="h">♫ musica<span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></div>' +
-      "<p>Además de programar, mezclo música electrónica.</p>" +
-      "<p>WaveLoad nació ahí: tenía una biblioteca de casi 800 temas y ninguna herramienta que la organizara como yo quería. Así que la construí.</p>" +
-      "<p>Para mí, armar un set y diseñar software se parecen: elegir qué va con qué, cuidar las transiciones y pensar en quien está del otro lado.</p>" +
-      hint(["ver waveload", "historia"]));
-  };
-
   C.servicios = function () {
     block('<div class="dim" style="margin-bottom:8px">Para empresas, emprendedores y startups:</div>' + rows([
-      ['<span class="g">→</span> sitios y apps web', "de la landing al cotizador online"],
-      ['<span class="g">→</span> sistemas de gestión', "clientes, ventas, cobros y stock en un solo lugar"],
-      ['<span class="g">→</span> automatización con IA', "procesos repetitivos que se resuelven solos"],
-      ['<span class="g">→</span> seguridad desde el diseño', "permisos y datos personales protegidos desde el día uno"]
+      ["→ sitios y apps web", "de la landing al cotizador online"],
+      ["→ sistemas de gestión", "clientes, ventas, cobros y stock en un solo lugar"],
+      ["→ automatización con IA", "procesos repetitivos que se resuelven solos"],
+      ["→ seguridad desde el diseño", "permisos y datos personales protegidos desde el día uno"]
     ]) + hint(["contacto"]));
   };
 
@@ -427,68 +733,75 @@
       ["email", '<a href="mailto:brunosavarella@gmail.com">brunosavarella@gmail.com</a>'],
       ["linkedin", ext("https://www.linkedin.com/in/brunosavarella/", "linkedin.com/in/brunosavarella")],
       ["github", ext("https://github.com/Brun02005", "github.com/Brun02005")],
-      ["ubicación", "Córdoba, Argentina · remoto"]
-    ]) + '<div class="dim" style="margin-top:12px">Te respondo a la brevedad.</div>');
+      ["base", "Córdoba, Argentina · remoto"]
+    ]) + '<div class="dim" style="margin-top:12px">Escribime. Te respondo a la brevedad.</div>');
   };
 
   C.simple = function () {
     C.clear();
-    ["whoami", "historia"].forEach(function (c) { C[c](); });
-    ORDER.forEach(function (k) { C.ver(k); });
-    ["experiencia", "formacion", "stack", "musica", "servicios", "contacto"].forEach(function (c) { C[c](); });
+    skipping = true; sequenceRunning = true;
+    return letter().then(function () {
+      sequenceRunning = false; skipping = false;
+      ORDER.forEach(function (k) { C.ver(k); });
+      ["experiencia", "formacion", "stack", "servicios", "contacto"].forEach(function (c) { C[c](); });
+      scrollTo(0, 0);
+    });
   };
 
   C.clear = function () { out.innerHTML = ""; };
+  C.whoami = function () { block("Bruno Savarella · DJ · programador · software · Córdoba, AR" + hint(["carta", "proyectos"])); };
   C.pwd = function () { block("/home/bruno"); };
-  C.date = function () { block(new Date().toLocaleString("es-AR", { timeZone: "America/Argentina/Cordoba", dateStyle: "full", timeStyle: "short" })); };
-  C.tema = function () { toggleTheme(); block('<span class="dim">tema: ' + currentTheme() + "</span>"); };
+  C.tema = function () { toggleTheme(); };
+  C.hev = function () { return runSequence(boot); };
 
-  // Easter eggs
+  // Cosas escondidas
   function egg(name, args) {
-    if (name === "sudo") return '<span class="r">bruno no está en el archivo sudoers.</span> Este incidente será reportado. 😉<br><span class="dim">Mínimo privilegio, siempre.</span>';
-    if (name === "rm" && /-rf/.test(args)) return '<span class="r">Permiso denegado.</span> <span class="dim">Los permisos viven en la base de datos, no en la interfaz.</span>';
+    if (name === "sudo") return "bruno no está en el archivo sudoers. Este incidente será reportado. 😉<br><span class=\"dim\">Mínimo privilegio, siempre.</span>";
+    if (name === "rm" && /-rf/.test(args)) return "Permiso denegado. <span class=\"dim\">Los permisos viven en la base de datos, no en la interfaz.</span>";
+    if (name === "λ" || name === "lambda") return "λ — en Half-Life es el símbolo de la resistencia. En programación, una función anónima. A mí me gustan las dos.";
+    if (name === "crowbar" || name === "palanca") return "Agarraste la palanca. No hay caso que se resista: " + ORDER.map(function (k) { return cmdLink("ver " + k, k); }).join(" · ");
+    if (name === "gman" || name === "g-man") return GMAN;
+    if (name === "freeman" || name === "gordon") return "Gordon no habla. Yo sí: " + cmdLink("contacto", "escribime") + ".";
+    if (name === "jobs" || name === "stevejobs") return '<div class="quote">"Stay hungry. Stay foolish."<span class="dim">— Steve Jobs, Stanford, 2005</span></div>';
+    if (name === "exit" || name === "logout") return "No hay salida, Freeman… digo, visitante. Mejor " + cmdLink("contacto", "escribime") + ".";
     if (name === "hack" || name === "hackear") return "Acceso denegado. Si te interesa la seguridad, probá " + cmdLink("ver bluedar") + ".";
-    if (name === "exit" || name === "logout") return "No hay salida… mejor " + cmdLink("contacto", "escribime") + ".";
-    if (name === "ping") return '<span class="g">pong</span> <span class="dim">· tiempo de respuesta: lo que tardes en escribirme</span>';
+    if (name === "ping") return "pong <span class=\"dim\">· tiempo de respuesta: lo que tardes en escribirme</span>";
     return null;
   }
 
-  var ALIAS = { "ayuda": "help", "?": "help", "ls": "proyectos", "projects": "proyectos", "about": "whoami",
-    "cls": "clear", "cat": "ver", "cd": "ver", "open": "ver", "skills": "stack", "music": "musica", "música": "musica",
-    "dj": "musica", "formación": "formacion", "estudios": "formacion", "contact": "contacto", "trabajo": "experiencia",
-    "story": "historia", "theme": "tema" };
+  var ALIAS = { "ayuda": "help", "?": "help", "ls": "proyectos", "projects": "proyectos", "historia": "carta",
+    "about": "carta", "cls": "clear", "cat": "ver", "cd": "ver", "open": "ver", "skills": "stack", "music": "musica",
+    "música": "musica", "dj": "musica", "pause": "stop", "pausa": "stop", "formación": "formacion", "estudios": "formacion",
+    "contact": "contacto", "trabajo": "experiencia", "theme": "tema", "invertir": "tema" };
 
   // ---------------- ejecución ----------------
   var history = [], hIndex = 0;
 
   function run(raw) {
+    if (sequenceRunning) { skip(); return; }
     var line = raw.trim();
     var echo = block('<span class="ps1">bruno@cordoba:<span class="path">~</span>$</span> ' + esc(line), "echo");
     if (!line) return;
     history.push(line); hIndex = history.length;
-    var parts = line.split(/\s+/);
-    var name = parts[0].toLowerCase();
-    var args = parts.slice(1).join(" ");
+    var parts = line.split(/\s+/), name = parts[0].toLowerCase(), args = parts.slice(1).join(" ");
     var key = ALIAS[name] || name;
-    if (key === "proyectos" && args) key = "ver";   // "ls aym" funciona como "ver aym"
-    if (Object.prototype.hasOwnProperty.call(C, key)) {
-      C[key](args);
-    } else {
-      block(egg(name, args) || '<span class="r">comando no encontrado: ' + esc(parts[0]) + "</span> · escribí " + cmdLink("help"));
-    }
+    if (key === "proyectos" && args) key = "ver";
+    var result;
+    if (Object.prototype.hasOwnProperty.call(C, key)) result = C[key](args);
+    else block(egg(name, args) || "comando no encontrado: " + esc(parts[0]) + ' <span class="dim">·</span> ' + cmdLink("help"));
     if (key === "clear" || key === "simple") { scrollTo(0, 0); return; }
+    if (result && result.then) return;   // las secuencias se desplazan solas
     var y = echo.getBoundingClientRect().top + scrollY - 52;
-    scrollTo({ top: y, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+    scrollTo({ top: y, behavior: reduced ? "auto" : "smooth" });
   }
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
-    var v = input.value;
-    input.value = "";
+    var v = input.value; input.value = "";
     run(v);
   });
 
-  var COMMANDS = ["help", "whoami", "historia", "proyectos", "ver", "stack", "experiencia", "formacion", "musica", "servicios", "contacto", "simple", "clear", "tema"];
+  var COMMANDS = ["help", "carta", "proyectos", "ver", "musica", "play", "stop", "drop", "bpm", "stack", "experiencia", "formacion", "servicios", "contacto", "simple", "clear"];
   input.addEventListener("keydown", function (e) {
     if (e.key === "ArrowUp" && history.length) {
       e.preventDefault(); hIndex = Math.max(0, hIndex - 1); input.value = history[hIndex];
@@ -496,8 +809,7 @@
       e.preventDefault(); hIndex = Math.min(history.length, hIndex + 1); input.value = history[hIndex] || "";
     } else if (e.key === "Tab") {
       e.preventDefault();
-      var v = input.value.toLowerCase();
-      var m = v.match(/^(ver|cat|cd)\s+(\S*)$/);
+      var v = input.value.toLowerCase(), m = v.match(/^(ver|cat|cd)\s+(\S*)$/);
       var pool = m ? ORDER.map(function (k) { return m[1] + " " + k; }) : COMMANDS;
       var hits = pool.filter(function (c) { return c.indexOf(v) === 0; });
       if (hits.length === 1) input.value = hits[0] + (m ? "" : " ");
@@ -508,6 +820,8 @@
   });
 
   document.addEventListener("click", function (e) {
+    if (!gate.classList.contains("gone")) return;
+    if (sequenceRunning && !e.target.closest("#playBtn, .top")) { skip(); return; }
     var t = e.target.closest("[data-cmd]");
     if (t) {
       e.preventDefault();
@@ -515,10 +829,10 @@
       if (!touch) input.focus({ preventScroll: true });
       return;
     }
-    // Click en la terminal = foco en la línea de comando (sin romper la selección de texto)
-    if (!touch && e.target.closest("main") && !e.target.closest("a") && !getSelection().toString()) {
-      input.focus({ preventScroll: true });
-    }
+    if (!touch && e.target.closest("main") && !e.target.closest("a") && !getSelection().toString()) input.focus({ preventScroll: true });
+  });
+  document.addEventListener("keydown", function (e) {
+    if (sequenceRunning && gate.classList.contains("gone") && e.key !== "Tab") skip();
   });
 
   // ---------------- tema ----------------
@@ -531,24 +845,50 @@
     try { localStorage.setItem("theme", next); } catch (e) {}
   }
   try { var saved = localStorage.getItem("theme"); if (saved) root.setAttribute("data-theme", saved); } catch (e) {}
-  document.getElementById("themeBtn").addEventListener("click", toggleTheme);
+  document.getElementById("themeBtn").addEventListener("click", function (e) { e.stopPropagation(); toggleTheme(); });
 
-  // ---------------- reloj (hora de Córdoba) ----------------
-  var clock = document.getElementById("clock");
+  // ---------------- reloj ----------------
+  var timeEl = document.getElementById("time");
   function tick() {
-    clock.textContent = new Date().toLocaleTimeString("es-AR", { timeZone: "America/Argentina/Cordoba", hour: "2-digit", minute: "2-digit", hourCycle: "h23" });
+    timeEl.textContent = new Date().toLocaleTimeString("es-AR", { timeZone: "America/Argentina/Cordoba", hour: "2-digit", minute: "2-digit", hourCycle: "h23" });
   }
   tick(); setInterval(tick, 15000);
 
-  // ---------------- inicio ----------------
-  var last = new Date().toLocaleString("es-AR", { timeZone: "America/Argentina/Cordoba", weekday: "short", day: "2-digit", month: "short", hour: "2-digit", minute: "2-digit", hourCycle: "h23" });
-  block('<span class="dim">Último inicio de sesión: ' + esc(last) + " desde Córdoba, AR</span>");
-  // Links directos: brun02005.github.io/#ver-aym abre ese proyecto
-  var start = decodeURIComponent((location.hash || "").slice(1)).replace(/-/g, " ").trim();
-  run(/^[a-záéíóú ]{2,30}$/i.test(start) ? start : "whoami");
-  block('<span class="dim">Escribí </span>' + cmdLink("help") + '<span class="dim"> o tocá un comando de abajo.</span>');
-  scrollTo(0, 0);
-  if (!touch) input.focus({ preventScroll: true });
+  // ---------------- entrada ----------------
+  var gate = document.getElementById("gate");
+  var startCmd = decodeURIComponent((location.hash || "").slice(1)).replace(/-/g, " ").trim();
+  if (!/^[a-záéíóúλ ]{2,30}$/i.test(startCmd)) startCmd = "";
+
+  function enter(withSound) {
+    if (gate.classList.contains("gone")) return;
+    if (withSound) Mix.play();
+    gate.classList.add("gone");
+    document.removeEventListener("keydown", gateKeys);
+    if (startCmd) {
+      run(startCmd);
+      block('<span class="dim">Escribí </span>' + cmdLink("help") + '<span class="dim"> o tocá un comando de abajo.</span>');
+      scrollTo(0, 0);
+    } else {
+      runSequence(function () { return boot().then(letter); });
+    }
+    if (!touch) input.focus({ preventScroll: true });
+  }
+  function gateKeys(e) {
+    if (e.key === "Enter") { e.preventDefault(); enter(true); }
+    else if (e.key === "Escape") enter(false);
+  }
+  document.getElementById("enterSound").addEventListener("click", function () { enter(true); });
+  document.getElementById("enterQuiet").addEventListener("click", function () { enter(false); });
+  document.addEventListener("keydown", gateKeys);
+  document.getElementById("enterSound").focus({ preventScroll: true });
+
+  // ?simple entra directo, sin sonido y con todo el contenido (útil para compartir o imprimir)
+  if (/[?&]simple\b/.test(location.search)) {
+    gate.style.transition = "none";
+    gate.classList.add("gone");
+    document.removeEventListener("keydown", gateKeys);
+    C.simple();
+  }
 })();
 </script>
 </body>
