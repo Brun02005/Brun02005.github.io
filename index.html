@@ -2,9 +2,9 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bruno Savarella — Desarrollador</title>
-  <meta name="description" content="Desarrollador Python y JavaScript de Córdoba, Argentina. Ciberseguridad, visión por computadora y desarrollo con IA. Proyectos, experiencia y contacto.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Bruno Savarella — Terminal</title>
+  <meta name="description" content="Bruno Savarella, desarrollador Python y JavaScript de Córdoba, Argentina. Ciberseguridad, visión por computadora y desarrollo con IA. Explorá mis proyectos desde una terminal.">
   <meta name="author" content="Bruno Savarella">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Bruno Savarella — Desarrollador">
@@ -15,519 +15,541 @@
   <meta property="og:image:height" content="627">
   <meta property="og:image:alt" content="Bruno Savarella — Desarrollador Python &amp; JavaScript">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="theme-color" content="#0b0f14">
+  <meta name="theme-color" content="#0c0d0f">
   <link rel="canonical" href="https://brun02005.github.io/">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0f14'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='28' font-weight='700' fill='%233ddc97' text-anchor='middle'%3EBS%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230c0d0f'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='28' font-weight='700' fill='%233ddc97' text-anchor='middle'%3E%3E_%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0b0f14;
-      --surface: #111820;
-      --surface-2: #161f29;
-      --border: #1f2b38;
-      --text: #e6edf3;
-      --muted: #8b98a5;
-      --accent: #3ddc97;
-      --accent-ink: #06261a;
-      --accent-2: #5ab0ff;
-      --warn: #f5b84a;
-      --shadow: 0 1px 0 rgba(255,255,255,.03) inset, 0 10px 30px rgba(0,0,0,.25);
-      --radius: 14px;
-      --mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
-      --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      --bg: #0c0d0f; --bar: #121418; --fg: #d6d6d6; --dim: #7d8590; --border: #23272e;
+      --green: #3ddc97; --amber: #f0b35a; --cyan: #6cb6ff; --red: #ff7b72; --sel: rgba(61,220,151,.22);
+      --mono: "JetBrains Mono", ui-monospace, Consolas, "Courier New", monospace;
     }
     @media (prefers-color-scheme: light) {
       :root:not([data-theme="dark"]) {
-        --bg: #f7f8fa; --surface: #ffffff; --surface-2: #f1f4f7; --border: #e1e6ec;
-        --text: #0f1720; --muted: #5b6876; --accent: #0f9d68; --accent-ink: #ffffff;
-        --accent-2: #1f6fd1; --warn: #b7791f; --shadow: 0 8px 24px rgba(15,23,32,.06);
+        --bg: #f6f3ea; --bar: #ece8dc; --fg: #24292f; --dim: #6e7781; --border: #d8d3c4;
+        --green: #0f8a5f; --amber: #9a6700; --cyan: #0969da; --red: #cf222e; --sel: rgba(15,138,95,.18);
       }
     }
     :root[data-theme="light"] {
-      --bg: #f7f8fa; --surface: #ffffff; --surface-2: #f1f4f7; --border: #e1e6ec;
-      --text: #0f1720; --muted: #5b6876; --accent: #0f9d68; --accent-ink: #ffffff;
-      --accent-2: #1f6fd1; --warn: #b7791f; --shadow: 0 8px 24px rgba(15,23,32,.06);
+      --bg: #f6f3ea; --bar: #ece8dc; --fg: #24292f; --dim: #6e7781; --border: #d8d3c4;
+      --green: #0f8a5f; --amber: #9a6700; --cyan: #0969da; --red: #cf222e; --sel: rgba(15,138,95,.18);
     }
 
-    *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 76px; }
-    body {
-      margin: 0; background: var(--bg); color: var(--text);
-      font: 16px/1.6 var(--sans); -webkit-font-smoothing: antialiased;
-    }
-    a { color: inherit; text-decoration: none; }
-    img, svg { display: block; }
-    .wrap { width: min(1080px, 100% - 32px); margin-inline: auto; }
-    .mono { font-family: var(--mono); }
-    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--bg); color: var(--fg); }
+    body { font: 15px/1.6 var(--mono); -webkit-font-smoothing: antialiased; min-height: 100vh; }
+    ::selection { background: var(--sel); }
+    a { color: var(--cyan); text-decoration: none; border-bottom: 1px dashed currentColor; }
+    a:hover { color: var(--green); }
+    :focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
+    p { margin: 0 0 10px; }
 
-    /* ---------- Nav ---------- */
-    header.nav {
-      position: sticky; top: 0; z-index: 10;
-      background: color-mix(in srgb, var(--bg) 82%, transparent);
-      backdrop-filter: saturate(140%) blur(10px);
-      border-bottom: 1px solid var(--border);
+    /* ---------- barra superior ---------- */
+    .top {
+      position: sticky; top: 0; z-index: 5; background: var(--bar); border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      padding: 0 16px; height: 40px; font-size: 13px; color: var(--dim);
     }
-    .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; gap: 16px; }
-    .brand { font-family: var(--mono); font-weight: 600; font-size: 15px; display: flex; align-items: center; gap: 8px; }
-    .brand .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 20%, transparent); }
-    .nav nav { display: flex; align-items: center; gap: 4px; }
-    .nav nav a { font-size: 14px; color: var(--muted); padding: 6px 10px; border-radius: 8px; }
-    .nav nav a:hover { color: var(--text); background: var(--surface-2); }
-    .theme-btn {
-      border: 1px solid var(--border); background: var(--surface); color: var(--muted);
-      width: 34px; height: 34px; border-radius: 9px; cursor: pointer; display: grid; place-items: center; margin-left: 6px;
+    .tab { color: var(--fg); display: flex; align-items: center; gap: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .tab b { color: var(--green); font-weight: 600; }
+    .top-actions { display: flex; gap: 4px; flex: none; }
+    .top button { font: inherit; color: var(--dim); background: none; border: 1px solid transparent; border-radius: 6px; padding: 3px 8px; cursor: pointer; }
+    .top button:hover { color: var(--fg); border-color: var(--border); }
+
+    /* ---------- terminal ---------- */
+    main { max-width: 980px; margin: 0 auto; padding: 18px 16px 150px; }
+    .blk { margin: 0 0 14px; animation: in .18s ease-out; }
+    @keyframes in { from { opacity: 0; transform: translateY(3px); } to { opacity: 1; transform: none; } }
+    .echo { margin: 22px 0 8px; color: var(--fg); word-break: break-word; }
+    .ps1 { color: var(--green); font-weight: 600; white-space: nowrap; }
+    .ps1 .path { color: var(--cyan); }
+    pre { font: inherit; margin: 0; }
+    .dim { color: var(--dim); }
+    .g { color: var(--green); }
+    .a { color: var(--amber); }
+    .c { color: var(--cyan); }
+    .r { color: var(--red); }
+    .h { color: var(--amber); font-weight: 700; margin-bottom: 10px; }
+    .ascii { color: var(--green); line-height: 1; font-size: 13px; margin-bottom: 12px; white-space: pre; overflow: hidden; }
+    @media (max-width: 640px) { .ascii { font-size: 7.4px; } }
+
+    /* tablas tipo "ls" / clave-valor */
+    .rows { display: grid; grid-template-columns: max-content 1fr; column-gap: 22px; row-gap: 4px; }
+    .rows > :nth-child(odd) { color: var(--dim); }
+    @media (max-width: 560px) {
+      .rows { grid-template-columns: 1fr; row-gap: 0; }
+      .rows > :nth-child(even) { margin-bottom: 8px; }
     }
-    .theme-btn:hover { color: var(--text); }
-    @media (max-width: 720px) { .nav nav a.hide-sm { display: none; } }
-    @media (max-width: 420px) {
-      .nav .wrap { gap: 8px; }
-      .brand { font-size: 13px; gap: 7px; }
-      .nav nav { gap: 0; }
-      .nav nav a { font-size: 13px; padding: 6px 6px; }
-      .theme-btn { margin-left: 4px; }
+    button.cmd {
+      font: inherit; color: var(--cyan); background: none; border: 0; padding: 0; cursor: pointer;
+      border-bottom: 1px dashed currentColor; text-align: left;
     }
+    button.cmd:hover { color: var(--green); }
 
-    /* ---------- Hero ---------- */
-    .hero { padding: 88px 0 56px; position: relative; overflow: hidden; }
-    .hero::before {
-      content: ""; position: absolute; inset: -40% -10% auto auto; width: 640px; height: 640px;
-      background: radial-gradient(circle, color-mix(in srgb, var(--accent) 16%, transparent), transparent 62%);
-      pointer-events: none;
+    /* casos de proyecto */
+    .case-title { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; margin-bottom: 10px; }
+    .case-title strong { color: var(--fg); font-size: 17px; }
+    .tag { font-size: 12px; padding: 1px 8px; border: 1px solid currentColor; border-radius: 4px; }
+    figure { margin: 4px 0 14px; max-width: 760px; }
+    figure img { display: block; width: 100%; height: auto; border: 1px solid var(--border); border-radius: 6px; background: var(--bar); }
+    figcaption { color: var(--dim); font-size: 12.5px; margin-top: 6px; }
+    .quote { border-left: 2px solid var(--amber); padding: 2px 0 2px 14px; margin: 14px 0; font-style: italic; }
+    .quote .dim { font-style: normal; display: block; margin-top: 4px; }
+
+    /* ecualizador del comando musica */
+    .eq { display: inline-flex; gap: 3px; align-items: flex-end; height: 16px; margin-left: 10px; vertical-align: -2px; }
+    .eq i { width: 4px; background: var(--green); animation: eq 1s ease-in-out infinite; }
+    .eq i:nth-child(2) { animation-delay: -.3s; } .eq i:nth-child(3) { animation-delay: -.6s; }
+    .eq i:nth-child(4) { animation-delay: -.15s; } .eq i:nth-child(5) { animation-delay: -.45s; }
+    @keyframes eq { 0%, 100% { height: 4px; } 50% { height: 16px; } }
+
+    /* ---------- línea de comando ---------- */
+    .prompt { display: flex; align-items: center; gap: 10px; margin-top: 18px; }
+    .prompt label { flex: none; }
+    #cmd {
+      flex: 1; min-width: 0; font: inherit; font-size: 16px; color: var(--fg); background: transparent;
+      border: 0; outline: none; caret-color: var(--green); padding: 2px 0;
     }
-    .status {
-      display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted);
-      border: 1px solid var(--border); background: var(--surface); padding: 6px 12px; border-radius: 999px;
+    #cmd::placeholder { color: var(--dim); opacity: .7; }
+
+    /* ---------- atajos + barra de estado ---------- */
+    .dock { position: fixed; left: 0; right: 0; bottom: 0; z-index: 5; background: var(--bar); border-top: 1px solid var(--border); padding-bottom: env(safe-area-inset-bottom); }
+    .chips { display: flex; gap: 6px; padding: 8px 16px; overflow-x: auto; scrollbar-width: none; max-width: 980px; margin: 0 auto; }
+    .chips::-webkit-scrollbar { display: none; }
+    .chips button {
+      font: inherit; font-size: 13px; flex: none; color: var(--fg); background: var(--bg);
+      border: 1px solid var(--border); border-radius: 6px; padding: 4px 10px; cursor: pointer;
     }
-    .status .pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); animation: pulse 2s infinite; }
-    @keyframes pulse { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 60%, transparent); } 70% { box-shadow: 0 0 0 8px transparent; } 100% { box-shadow: 0 0 0 0 transparent; } }
-    .hero h1 { font-size: clamp(38px, 7vw, 68px); line-height: 1.04; letter-spacing: -0.035em; margin: 22px 0 14px; font-weight: 800; }
-    .hero h1 .accent { color: var(--accent); }
-    .hero .role { font-family: var(--mono); color: var(--muted); font-size: clamp(14px, 2.2vw, 17px); margin: 0 0 22px; }
-    .hero .role .caret { display: inline-block; width: 9px; height: 1.1em; background: var(--accent); vertical-align: -3px; margin-left: 2px; animation: blink 1s steps(1) infinite; }
-    @keyframes blink { 50% { opacity: 0; } }
-    .hero p.lead { font-size: clamp(17px, 2.3vw, 20px); max-width: 680px; color: var(--text); margin: 0 0 30px; }
-    .hero p.lead strong { color: var(--accent); font-weight: 600; }
-    .cta { display: flex; flex-wrap: wrap; gap: 10px; }
-    .btn {
-      display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: 15px;
-      padding: 11px 18px; border-radius: 10px; border: 1px solid var(--border); background: var(--surface);
-      transition: transform .15s ease, border-color .15s ease, background .15s ease;
-    }
-    .btn:hover { transform: translateY(-1px); border-color: color-mix(in srgb, var(--accent) 50%, var(--border)); }
-    .btn.primary { background: var(--accent); color: var(--accent-ink); border-color: transparent; }
-    .btn svg { width: 17px; height: 17px; }
+    .chips button:hover { border-color: var(--green); color: var(--green); }
+    .status { display: flex; justify-content: space-between; gap: 12px; padding: 2px 16px 4px; font-size: 12px; color: var(--dim); max-width: 980px; margin: 0 auto; }
+    .status .live::before { content: "●"; color: var(--green); margin-right: 6px; }
+    @media (max-width: 520px) { .status .hide-sm { display: none; } }
 
-    /* ---------- Stats ---------- */
-    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 56px; }
-    .stat { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; }
-    .stat b { display: block; font-size: 28px; letter-spacing: -0.02em; font-weight: 800; }
-    .stat span { font-size: 13.5px; color: var(--muted); line-height: 1.4; display: block; margin-top: 2px; }
-    @media (max-width: 760px) { .stats { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 420px) { .stat { padding: 16px 14px; } .stat b { font-size: 22px; } }
-
-    /* ---------- Sections ---------- */
-    section { padding: 64px 0; }
-    .sec-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 26px; }
-    .sec-head .num { font-family: var(--mono); color: var(--accent); font-size: 14px; }
-    .sec-head h2 { font-size: clamp(26px, 4vw, 34px); margin: 0; letter-spacing: -0.025em; }
-    .sec-head .line { flex: 1; height: 1px; background: var(--border); }
-    .sec-sub { color: var(--muted); max-width: 640px; margin: -12px 0 28px; }
-
-    /* ---------- Projects ---------- */
-    .projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-    .card {
-      background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
-      padding: 24px; display: flex; flex-direction: column; box-shadow: var(--shadow);
-      transition: border-color .2s ease, transform .2s ease;
-    }
-    .card:hover { border-color: color-mix(in srgb, var(--accent) 40%, var(--border)); transform: translateY(-2px); }
-    .card.feature { grid-column: 1 / -1; }
-    .card .top { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
-    .icon { width: 42px; height: 42px; border-radius: 11px; display: grid; place-items: center; background: color-mix(in srgb, var(--accent) 12%, var(--surface-2)); color: var(--accent); flex: none; }
-    .icon svg { width: 22px; height: 22px; }
-    .badge { font-family: var(--mono); font-size: 12px; padding: 4px 9px; border-radius: 999px; border: 1px solid var(--border); color: var(--muted); white-space: nowrap; }
-    .badge.live { color: var(--accent); border-color: color-mix(in srgb, var(--accent) 40%, var(--border)); }
-    .badge.wip { color: var(--warn); border-color: color-mix(in srgb, var(--warn) 40%, var(--border)); }
-    .card h3 { margin: 0 0 6px; font-size: 20px; letter-spacing: -0.015em; }
-    .card .kicker { color: var(--accent-2); font-size: 14px; font-weight: 500; margin-bottom: 10px; }
-    .card p { margin: 0 0 14px; color: var(--muted); font-size: 15px; }
-    .card ul { margin: 0 0 16px; padding: 0; list-style: none; display: grid; gap: 7px; }
-    .card li { font-size: 14.5px; padding-left: 20px; position: relative; }
-    .card li::before { content: "▸"; position: absolute; left: 2px; color: var(--accent); font-size: 12px; top: 2px; }
-    .feature-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 28px; }
-    @media (max-width: 820px) { .projects, .feature-grid { grid-template-columns: 1fr; } }
-    .metric { font-family: var(--mono); font-size: 13px; background: var(--surface-2); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; margin-bottom: 16px; color: var(--text); }
-    .metric b { color: var(--accent); font-weight: 600; }
-    .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 4px; }
-    .tag { font-family: var(--mono); font-size: 12px; padding: 3px 8px; border-radius: 6px; background: var(--surface-2); color: var(--muted); }
-    .links { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border); }
-    .links a, .links span { font-size: 14px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; }
-    .links a { color: var(--text); }
-    .links a:hover { color: var(--accent); }
-    .links span { color: var(--muted); font-weight: 500; }
-    .links svg { width: 15px; height: 15px; }
-
-    /* ---------- Services ---------- */
-    .services { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
-    .service { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
-    .service .icon { margin-bottom: 14px; }
-    .service h3 { font-size: 16px; margin: 0 0 6px; }
-    .service p { font-size: 14px; color: var(--muted); margin: 0; }
-    @media (max-width: 900px) { .services { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 520px) { .services { grid-template-columns: 1fr; } }
-
-    /* ---------- Experience ---------- */
-    .two { display: grid; grid-template-columns: 1.3fr 1fr; gap: 28px; }
-    @media (max-width: 820px) { .two { grid-template-columns: 1fr; } }
-    .timeline { position: relative; padding-left: 22px; }
-    .timeline::before { content: ""; position: absolute; left: 5px; top: 8px; bottom: 8px; width: 2px; background: var(--border); }
-    .t-item { position: relative; padding-bottom: 26px; }
-    .t-item:last-child { padding-bottom: 0; }
-    .t-item::before { content: ""; position: absolute; left: -22px; top: 7px; width: 12px; height: 12px; border-radius: 50%; background: var(--bg); border: 2px solid var(--accent); }
-    .t-item .when { font-family: var(--mono); font-size: 13px; color: var(--muted); }
-    .t-item h3 { margin: 2px 0 2px; font-size: 18px; }
-    .t-item .org { color: var(--accent-2); font-size: 14.5px; font-weight: 500; margin-bottom: 8px; }
-    .t-item ul { margin: 0; padding-left: 18px; color: var(--muted); font-size: 15px; }
-    .t-item li { margin-bottom: 4px; }
-    .t-item li strong { color: var(--text); font-weight: 600; }
-    .panel { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; }
-    .panel + .panel { margin-top: 14px; }
-    .panel h3 { margin: 0 0 14px; font-size: 15px; font-family: var(--mono); color: var(--muted); font-weight: 500; }
-    .edu { display: grid; gap: 14px; }
-    .edu div b { display: block; font-size: 15.5px; }
-    .edu div span { font-size: 14px; color: var(--muted); }
-    .stack { display: flex; flex-wrap: wrap; gap: 7px; }
-    .stack .tag { font-size: 12.5px; padding: 5px 9px; color: var(--text); border: 1px solid var(--border); background: var(--surface-2); }
-
-    /* ---------- Contact ---------- */
-    .contact {
-      background: linear-gradient(140deg, color-mix(in srgb, var(--accent) 14%, var(--surface)), var(--surface) 60%);
-      border: 1px solid var(--border); border-radius: 20px; padding: clamp(28px, 5vw, 52px); text-align: center;
-    }
-    .contact h2 { font-size: clamp(28px, 5vw, 42px); letter-spacing: -0.03em; margin: 0 0 10px; }
-    .contact p { color: var(--muted); max-width: 560px; margin: 0 auto 26px; font-size: 17px; }
-    .contact .cta { justify-content: center; }
-    footer { padding: 34px 0 44px; color: var(--muted); font-size: 13.5px; text-align: center; }
-    footer .mono { color: var(--accent); }
-
-    /* ---------- Reveal ---------- */
-    .reveal { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
-    .reveal.in { opacity: 1; transform: none; }
     @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      .reveal { opacity: 1; transform: none; transition: none; }
-      .status .pulse, .hero .role .caret { animation: none; }
-      .btn, .card { transition: none; }
+      .blk { animation: none; }
+      .eq i { animation: none; height: 10px; }
     }
+    noscript { display: block; max-width: 760px; margin: 0 auto; padding: 24px 16px; }
   </style>
 </head>
 <body>
 
-<header class="nav">
-  <div class="wrap">
-    <a class="brand" href="#inicio"><span class="dot"></span>bruno.savarella</a>
-    <nav aria-label="Principal">
-      <a href="#proyectos">Proyectos</a>
-      <a href="#servicios" class="hide-sm">Servicios</a>
-      <a href="#experiencia" class="hide-sm">Experiencia</a>
-      <a href="#contacto">Contacto</a>
-      <button class="theme-btn" id="themeBtn" type="button" aria-label="Cambiar tema claro/oscuro">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
-      </button>
-    </nav>
+<header class="top">
+  <div class="tab"><b>&gt;_</b> bruno@cordoba: ~</div>
+  <div class="top-actions">
+    <button type="button" data-cmd="simple" title="Ver todo junto, sin comandos">modo simple</button>
+    <button type="button" id="themeBtn" title="Cambiar tema claro/oscuro">tema</button>
   </div>
 </header>
 
-<main id="inicio">
-  <!-- ================= HERO ================= -->
-  <section class="hero">
-    <div class="wrap">
-      <span class="status"><span class="pulse"></span>Disponible para trabajar y proyectos freelance · Córdoba, AR · Remoto</span>
-      <h1>Hola, soy Bruno.<br>Construyo software <span class="accent">seguro</span><br>que resuelve problemas reales.</h1>
-      <p class="role mono">Python · JavaScript · Ciberseguridad · Desarrollo con IA<span class="caret"></span></p>
-      <p class="lead">En la empresa donde trabajo, los clientes se gestionaban en papel. Desarrollé un sistema para digitalizar todo el proceso y <strong>las ventas subieron un 10 %</strong>. Eso es lo que hago: entender el problema y convertirlo en una solución que funciona.</p>
-      <div class="cta">
-        <a class="btn primary" href="#proyectos">
-          Ver proyectos
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-        <a class="btn" href="mailto:brunosavarella@gmail.com">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-          Escribime
-        </a>
-        <a class="btn" href="https://github.com/Brun02005" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.26 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>
-          GitHub
-        </a>
-        <a class="btn" href="https://www.linkedin.com/in/brunosavarella/" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
-          LinkedIn
-        </a>
-      </div>
+<main id="term">
+  <div id="out" role="log" aria-live="polite" aria-label="Salida de la terminal"></div>
+  <form class="prompt" id="form" autocomplete="off">
+    <label for="cmd" class="ps1">bruno@cordoba:<span class="path">~</span>$</label>
+    <input id="cmd" name="cmd" type="text" spellcheck="false" autocapitalize="none" autocorrect="off" enterkeyhint="send" placeholder="escribí help" aria-label="Comando">
+  </form>
 
-      <div class="stats">
-        <div class="stat reveal"><b>+10 %</b><span>en ventas al digitalizar la gestión de clientes</span></div>
-        <div class="stat reveal"><b>646</b><span>tests automatizados en WaveLoad</span></div>
-        <div class="stat reveal"><b>1 en 12.500</b><span>tasa de falsa aceptación en reconocimiento facial</span></div>
-        <div class="stat reveal"><b>5</b><span>proyectos, uno en producción con clientes reales</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= PROYECTOS ================= -->
-  <section id="proyectos">
-    <div class="wrap">
-      <div class="sec-head"><span class="num">01</span><h2>Proyectos</h2><span class="line"></span></div>
-      <p class="sec-sub">Software que construí de punta a punta. Desarrollo con IA todos los días: uso asistentes de código para avanzar más rápido y también integro modelos de IA en mis aplicaciones.</p>
-
-      <div class="projects">
-        <!-- A&M -->
-        <article class="card feature reveal">
-          <div class="top">
-            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12c2 0 2-1.5 4-1.5S8 12 10 12s2-1.5 4-1.5 2 1.5 4 1.5 2-1.5 4-1.5"/><path d="M2 17c2 0 2-1.5 4-1.5S8 17 10 17s2-1.5 4-1.5 2 1.5 4 1.5 2-1.5 4-1.5"/><path d="M7 7V4a2 2 0 0 1 4 0M13 7V4a2 2 0 0 1 4 0"/></svg></div>
-            <span class="badge live">● En producción</span>
-          </div>
-          <div class="feature-grid">
-            <div>
-              <h3>A&amp;M Piscinas — Cotizador online y CRM</h3>
-              <div class="kicker">Desarrollo web full stack · Seguridad</div>
-              <p>Plataforma que digitalizó el proceso comercial de una empresa de piscinas de Córdoba. Los clientes configuran su piscina, ven el precio en tiempo real y reciben el presupuesto en PDF por WhatsApp; el equipo de ventas gestiona todo desde un CRM interno.</p>
-              <div class="tags">
-                <span class="tag">JavaScript</span><span class="tag">Supabase</span><span class="tag">PostgreSQL</span><span class="tag">Cloudflare Pages</span><span class="tag">Serverless</span>
-              </div>
-            </div>
-            <div>
-              <ul>
-                <li>Cotizador online con PDF automático</li>
-                <li>Panel de leads, clientes, cuotas, instalaciones y stock</li>
-                <li>Roles aplicados en la base de datos con Row Level Security</li>
-                <li>Claves secretas solo en funciones serverless, nunca en el navegador</li>
-                <li>Captcha, cabeceras de seguridad y retención de datos (Ley 25.326)</li>
-              </ul>
-            </div>
-          </div>
-          <div class="links">
-            <a href="https://aym-piscinas.pages.dev" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3h7v7M10 14 21 3M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5"/></svg>Ver sitio en vivo</a>
-            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Código privado (cliente)</span>
-          </div>
-        </article>
-
-        <!-- BLUE-DAR -->
-        <article class="card reveal">
-          <div class="top">
-            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 7 10 10-5 5V2l5 5L7 17"/></svg></div>
-            <span class="badge">Ciberseguridad</span>
-          </div>
-          <h3>BLUE-DAR</h3>
-          <div class="kicker">Análisis pasivo de entornos Bluetooth (BLE)</div>
-          <p>Herramienta orientada a auditorías de seguridad y privacidad: detecta y clasifica dispositivos Bluetooth cercanos solo a partir de sus señales públicas, sin conectarse nunca, y estima su distancia como un rango.</p>
-          <ul>
-            <li>Privacidad por diseño: pseudónimos HMAC con clave efímera</li>
-            <li>Detección de suplantación de anuncios BLE ("BLE spam")</li>
-            <li>Clasificación explicable: regla aplicada y nivel de evidencia</li>
-            <li>Informe técnico, plan experimental y 61 tests</li>
-          </ul>
-          <div class="tags"><span class="tag">Python</span><span class="tag">BLE</span><span class="tag">FastAPI</span><span class="tag">ESP32</span></div>
-          <div class="links">
-            <a href="https://github.com/Brun02005/BLUE-DAR" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>Código</a>
-          </div>
-        </article>
-
-        <!-- Control de acceso -->
-        <article class="card reveal">
-          <div class="top">
-            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/><circle cx="12" cy="10" r="3"/><path d="M7 18a5 5 0 0 1 10 0"/></svg></div>
-            <span class="badge">Visión por computadora</span>
-          </div>
-          <h3>Control de acceso biométrico</h3>
-          <div class="kicker">Reconocimiento facial con prueba de vida</div>
-          <p>Control de acceso y registro de asistencia para empresas. Solo habilita a personas registradas, autorizadas y con consentimiento, y una foto no abre la puerta: verifica que la persona parpadee.</p>
-          <div class="metric">Benchmark LFW · 2.308 identidades<br>Falsa aceptación <b>~0,008 %</b> · Falso rechazo <b>~1,4 %</b></div>
-          <ul>
-            <li>Biometría cifrada en reposo; guarda vectores, nunca fotos</li>
-            <li>Auditoría, fichaje de personal y salida para cerraduras eléctricas</li>
-          </ul>
-          <div class="tags"><span class="tag">Python</span><span class="tag">OpenCV</span><span class="tag">MediaPipe</span><span class="tag">InsightFace</span></div>
-          <div class="links">
-            <a href="https://github.com/Brun02005/control-acceso-facial" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>Código</a>
-          </div>
-        </article>
-
-        <!-- WaveLoad -->
-        <article class="card reveal">
-          <div class="top">
-            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h2M6 8v8M10 4v16M14 7v10M18 10v4M22 12h0"/></svg></div>
-            <span class="badge">App de escritorio</span>
-          </div>
-          <h3>WaveLoad</h3>
-          <div class="kicker">Gestión y análisis de catálogos de audio</div>
-          <p>Software de escritorio para DJs y productores: procesa y etiqueta cada pista, analiza la señal de audio y arma un grafo de compatibilidad para recomendar combinaciones.</p>
-          <ul>
-            <li>Arquitectura hexagonal, bus de eventos y workers en segundo plano</li>
-            <li>Motor de consultas que compila filtros de etiquetas a SQL</li>
-            <li>646 tests; probado con una biblioteca real de ~800 temas</li>
-          </ul>
-          <div class="tags"><span class="tag">Python</span><span class="tag">PySide6</span><span class="tag">SQLite</span><span class="tag">librosa</span><span class="tag">pytest</span></div>
-          <div class="links">
-            <a href="https://github.com/Brun02005/WaveLoad" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>Código</a>
-          </div>
-        </article>
-
-        <!-- MathVision -->
-        <article class="card reveal">
-          <div class="top">
-            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 4H6l6 8-6 8h12"/></svg></div>
-            <span class="badge wip">En desarrollo</span>
-          </div>
-          <h3>MathVision AI</h3>
-          <div class="kicker">Tutor de matemática con IA · EdTech</div>
-          <p>Plataforma educativa: sacás una foto del ejercicio, la IA lo reconoce, identifica el tema y lo resuelve paso a paso en español, explicando el método y graficando la función.</p>
-          <ul>
-            <li>OCR con Gemini Vision y un modelo local de respaldo</li>
-            <li>Cálculo simbólico con SymPy; modos Profesor y Examen</li>
-          </ul>
-          <div class="tags"><span class="tag">FastAPI</span><span class="tag">React</span><span class="tag">SymPy</span><span class="tag">Gemini</span></div>
-          <div class="links">
-            <a href="https://github.com/Brun02005/mathvision-ai" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>Código</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= SERVICIOS ================= -->
-  <section id="servicios">
-    <div class="wrap">
-      <div class="sec-head"><span class="num">02</span><h2>¿En qué te puedo ayudar?</h2><span class="line"></span></div>
-      <p class="sec-sub">Para empresas, emprendedores y startups que necesitan software a medida.</p>
-      <div class="services">
-        <div class="service reveal">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 22h8M12 18v4"/></svg></div>
-          <h3>Sitios y apps web</h3>
-          <p>Desde la landing hasta el cotizador online, rápidos y listos para buscadores.</p>
-        </div>
-        <div class="service reveal">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></div>
-          <h3>Sistemas de gestión</h3>
-          <p>Clientes, ventas, cobros y stock en un solo lugar. Chau papel y planillas sueltas.</p>
-        </div>
-        <div class="service reveal">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="3"/></svg></div>
-          <h3>Automatización con IA</h3>
-          <p>Procesos repetitivos que se resuelven solos e IA integrada en tus herramientas.</p>
-        </div>
-        <div class="service reveal">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></div>
-          <h3>Seguridad desde el diseño</h3>
-          <p>Permisos, protección de datos personales y buenas prácticas desde el primer día.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= EXPERIENCIA ================= -->
-  <section id="experiencia">
-    <div class="wrap">
-      <div class="sec-head"><span class="num">03</span><h2>Experiencia y formación</h2><span class="line"></span></div>
-      <div class="two">
-        <div class="timeline">
-          <div class="t-item reveal">
-            <div class="when">mar. 2026 — hoy</div>
-            <h3>Analista de datos y desarrollo</h3>
-            <div class="org">A&amp;M Piscinas · Córdoba</div>
-            <ul>
-              <li>Gestiono la información de la empresa: recopilo, limpio y transformo datos para tomar mejores decisiones.</li>
-              <li>Automatizo flujos de trabajo internos.</li>
-              <li>Diseñé y desarrollé el <strong>sitio web y el sistema de gestión</strong> de la empresa, hoy en producción.</li>
-            </ul>
-          </div>
-          <div class="t-item reveal">
-            <div class="when">ene. 2024 — mar. 2026</div>
-            <h3>Director de ventas y marketing</h3>
-            <div class="org">A&amp;M Piscinas · Córdoba</div>
-            <ul>
-              <li>Lideré la atención al cliente y la estrategia de publicidad.</li>
-              <li>Digitalicé la gestión de clientes, que se llevaba en papel: <strong>+10 % en ventas</strong>.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div>
-          <div class="panel reveal">
-            <h3>// formación</h3>
-            <div class="edu">
-              <div><b>Ingeniería en Sistemas de Información</b><span>Universidad Tecnológica Nacional · 2023 — en curso</span></div>
-              <div><b>Introducción a la Ciberseguridad</b><span>FAMAF — Universidad Nacional de Córdoba</span></div>
-              <div><b>Cybersecurity Fluency</b><span>IBM SkillsBuild</span></div>
-              <div><b>Python</b><span>Santander Open Academy</span></div>
-              <div><b>Inglés B2</b><span>Español nativo</span></div>
-            </div>
-          </div>
-          <div class="panel reveal">
-            <h3>// stack</h3>
-            <div class="stack">
-              <span class="tag">Python</span><span class="tag">JavaScript</span><span class="tag">FastAPI</span><span class="tag">React</span>
-              <span class="tag">PostgreSQL</span><span class="tag">SQLite</span><span class="tag">Supabase</span><span class="tag">Cloudflare</span>
-              <span class="tag">OpenCV</span><span class="tag">MediaPipe</span><span class="tag">PySide6</span><span class="tag">pytest</span>
-              <span class="tag">Git</span><span class="tag">HTML/CSS</span><span class="tag">Tailwind</span><span class="tag">APIs de IA</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= CONTACTO ================= -->
-  <section id="contacto">
-    <div class="wrap">
-      <div class="contact reveal">
-        <h2>¿Tenés un proyecto o una vacante?</h2>
-        <p>Estoy buscando sumarme a un equipo de tecnología y también tomo proyectos freelance. Escribime y te respondo a la brevedad.</p>
-        <div class="cta">
-          <a class="btn primary" href="mailto:brunosavarella@gmail.com">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-            brunosavarella@gmail.com
-          </a>
-          <a class="btn" href="https://www.linkedin.com/in/brunosavarella/" target="_blank" rel="noopener">LinkedIn</a>
-          <a class="btn" href="https://github.com/Brun02005" target="_blank" rel="noopener">GitHub</a>
-        </div>
-      </div>
-    </div>
-  </section>
+  <noscript>
+    <h1>Bruno Savarella</h1>
+    <p>Desarrollador Python &amp; JavaScript · Ciberseguridad, visión por computadora y desarrollo con IA · Córdoba, Argentina.</p>
+    <p>Proyectos: A&amp;M Piscinas (cotizador online y CRM en producción, <a href="https://aym-piscinas.pages.dev">sitio</a>),
+      <a href="https://github.com/Brun02005/control-acceso-facial">control de acceso biométrico</a>,
+      <a href="https://github.com/Brun02005/BLUE-DAR">BLUE-DAR</a>,
+      <a href="https://github.com/Brun02005/WaveLoad">WaveLoad</a> y
+      <a href="https://github.com/Brun02005/mathvision-ai">MathVision AI</a>.</p>
+    <p>Contacto: <a href="mailto:brunosavarella@gmail.com">brunosavarella@gmail.com</a> ·
+      <a href="https://www.linkedin.com/in/brunosavarella/">LinkedIn</a> ·
+      <a href="https://github.com/Brun02005">GitHub</a></p>
+  </noscript>
 </main>
 
-<footer>
-  <div class="wrap">© <span id="year">2026</span> Bruno Savarella · Córdoba, Argentina · <span class="mono">hecho a mano, sin frameworks</span></div>
-</footer>
+<div class="dock">
+  <nav class="chips" aria-label="Comandos rápidos">
+    <button type="button" data-cmd="whoami">whoami</button>
+    <button type="button" data-cmd="proyectos">proyectos</button>
+    <button type="button" data-cmd="historia">historia</button>
+    <button type="button" data-cmd="stack">stack</button>
+    <button type="button" data-cmd="musica">musica</button>
+    <button type="button" data-cmd="servicios">servicios</button>
+    <button type="button" data-cmd="contacto">contacto</button>
+    <button type="button" data-cmd="help">help</button>
+    <button type="button" data-cmd="clear">clear</button>
+  </nav>
+  <div class="status">
+    <span class="live">disponible · freelance y equipos</span>
+    <span><span class="hide-sm">Córdoba, AR · </span><span id="clock">--:--</span></span>
+  </div>
+</div>
 
 <script>
-  // Tema claro/oscuro (se recuerda en este navegador)
-  (function () {
-    var root = document.documentElement;
-    try { var saved = localStorage.getItem("theme"); if (saved) root.setAttribute("data-theme", saved); } catch (e) {}
-    document.getElementById("themeBtn").addEventListener("click", function () {
-      var current = root.getAttribute("data-theme") ||
-        (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
-      var next = current === "light" ? "dark" : "light";
-      root.setAttribute("data-theme", next);
-      try { localStorage.setItem("theme", next); } catch (e) {}
+(function () {
+  "use strict";
+
+  var out = document.getElementById("out");
+  var input = document.getElementById("cmd");
+  var form = document.getElementById("form");
+  var root = document.documentElement;
+  var touch = matchMedia("(hover: none)").matches;
+
+  // ---------------- utilidades ----------------
+  function esc(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
     });
-  })();
+  }
+  function block(html, cls) {
+    var div = document.createElement("div");
+    div.className = "blk" + (cls ? " " + cls : "");
+    div.innerHTML = html;
+    out.appendChild(div);
+    return div;
+  }
+  function cmdLink(cmd, label) {
+    return '<button type="button" class="cmd" data-cmd="' + esc(cmd) + '">' + esc(label || cmd) + "</button>";
+  }
+  function rows(pairs) {
+    return '<div class="rows">' + pairs.map(function (p) { return "<span>" + p[0] + "</span><span>" + p[1] + "</span>"; }).join("") + "</div>";
+  }
+  function hint(cmds) {
+    return '<div class="dim" style="margin-top:12px">→ probá: ' + cmds.map(function (c) { return cmdLink(c); }).join(" · ") + "</div>";
+  }
+  function ext(url, label) {
+    return '<a href="' + url + '" target="_blank" rel="noopener">' + label + " ↗</a>";
+  }
 
-  // Aparición suave al hacer scroll
-  (function () {
-    var items = document.querySelectorAll(".reveal");
-    if (!("IntersectionObserver" in window)) { items.forEach(function (el) { el.classList.add("in"); }); return; }
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
-    }, { threshold: 0.12 });
-    items.forEach(function (el) { io.observe(el); });
-  })();
+  // ---------------- contenido ----------------
+  var LETTERS = {
+    B: ["██████╗ ", "██╔══██╗", "██████╔╝", "██╔══██╗", "██████╔╝", "╚═════╝ "],
+    R: ["██████╗ ", "██╔══██╗", "██████╔╝", "██╔══██╗", "██║  ██║", "╚═╝  ╚═╝"],
+    U: ["██╗   ██╗", "██║   ██║", "██║   ██║", "██║   ██║", "╚██████╔╝", " ╚═════╝ "],
+    N: ["███╗   ██╗", "████╗  ██║", "██╔██╗ ██║", "██║╚██╗██║", "██║ ╚████║", "╚═╝  ╚═══╝"],
+    O: [" ██████╗ ", "██╔═══██╗", "██║   ██║", "██║   ██║", "╚██████╔╝", " ╚═════╝ "]
+  };
+  var ASCII = [0, 1, 2, 3, 4, 5].map(function (i) {
+    return "BRUNO".split("").map(function (l) { return LETTERS[l][i]; }).join("");
+  }).join("\n").replace(/[╗╔╝╚═║]/g, " ").replace(/ +$/gm, "");  // solo bloques: las sombras se superponen
 
-  document.getElementById("year").textContent = new Date().getFullYear();
+  var PROJECTS = {
+    aym: {
+      dir: "aym-piscinas", short: "cotizador online + CRM · en producción",
+      title: "A&amp;M Piscinas — cotizador online y CRM", tag: ["g", "EN PRODUCCIÓN"],
+      img: ["assets/aym-catalogo.png", "assets/aym-hero.png"], caption: "Captura real del sitio en producción.",
+      rows: [
+        ["problema", "Los clientes se gestionaban en papel y se perdían en el seguimiento."],
+        ["decisión", "Digitalizar todo y poner la seguridad donde viven los datos: permisos con Row Level Security en PostgreSQL y claves secretas solo en funciones del servidor."],
+        ["resultado", "La digitalización llevó las ventas <span class=\"g\">+10 %</span>. Hoy los clientes arman su piscina online, ven el precio al instante y reciben el presupuesto en PDF por WhatsApp."],
+        ["stack", "JavaScript · Supabase (PostgreSQL, Auth, Storage) · Cloudflare Pages Functions · Turnstile"],
+        ["links", ext("https://aym-piscinas.pages.dev", "ver sitio") + ' <span class="dim">· código privado (cliente)</span>']
+      ]
+    },
+    acceso: {
+      dir: "control-acceso", short: "reconocimiento facial con prueba de vida",
+      title: "Control de acceso biométrico", tag: ["c", "VISIÓN POR COMPUTADORA"],
+      img: ["assets/acceso-calibracion.png"], caption: "Calibración real del umbral sobre el benchmark LFW (2.308 identidades).",
+      rows: [
+        ["problema", "Controlar quién entra sin tarjetas ni llaves, y sin que una foto alcance para engañar al sistema."],
+        ["decisión", "Medir el umbral de similitud en vez de elegirlo a ojo. El script sugería 0,22; elegí 0,35: el falso rechazo casi no cambia y la falsa aceptación baja unas 10 veces."],
+        ["resultado", "Falsa aceptación <span class=\"g\">~0,008 %</span> (1 en 12.500) · falso rechazo ~1,4 % · prueba de vida por parpadeo · biometría cifrada en reposo."],
+        ["stack", "Python · OpenCV · MediaPipe · InsightFace · ONNX Runtime · cryptography"],
+        ["links", ext("https://github.com/Brun02005/control-acceso-facial", "código")]
+      ]
+    },
+    bluedar: {
+      dir: "blue-dar", short: "auditoría pasiva de entornos Bluetooth",
+      title: "BLUE-DAR — análisis pasivo de entornos BLE", tag: ["a", "CIBERSEGURIDAD"],
+      img: ["assets/bluedar.png"], caption: "Interfaz web corriendo con datos simulados.",
+      rows: [
+        ["problema", "Auditar el entorno Bluetooth sin convertir la herramienta en un rastreador de personas."],
+        ["decisión", "Privacidad por diseño: las MAC se reemplazan por pseudónimos HMAC con una clave que se descarta al cerrar la sesión, los nombres ajenos se descartan y solo se localizan dispositivos propios."],
+        ["resultado", "Clasificación explicable (regla + nivel de evidencia), detección de BLE spam, 61 tests, informe técnico y plan experimental."],
+        ["stack", "Python · Bleak (BLE) · FastAPI · JavaScript · pytest · ESP32"],
+        ["links", ext("https://github.com/Brun02005/BLUE-DAR", "código")]
+      ]
+    },
+    waveload: {
+      dir: "waveload", short: "gestión y análisis de catálogos de audio",
+      title: "WaveLoad — gestión y análisis de audio", tag: ["c", "ESCRITORIO"],
+      img: ["assets/waveload.png"], caption: "Vista de la librería: BPM, tono y energía calculados para cada tema.",
+      rows: [
+        ["problema", "Una biblioteca de casi 800 temas para pinchar y ninguna herramienta que la organizara como yo quería."],
+        ["decisión", "Arquitectura hexagonal (el dominio no sabe nada de la base ni de la interfaz), workers en segundo plano y un motor de consultas que compila filtros de etiquetas a SQL."],
+        ["resultado", "<span class=\"g\">646 tests</span> que corren en menos de un minuto, análisis de la señal de audio y un grafo de compatibilidad entre temas para armar sets."],
+        ["stack", "Python · PySide6 (Qt) · SQLite · librosa · NumPy · NetworkX · pytest"],
+        ["links", ext("https://github.com/Brun02005/WaveLoad", "código") + " · " + cmdLink("musica", "por qué lo hice")]
+      ]
+    },
+    mathvision: {
+      dir: "mathvision", short: "tutor de matemática con IA · en desarrollo",
+      title: "MathVision AI — tutor de matemática", tag: ["a", "EN DESARROLLO"],
+      img: ["assets/mathvision.png"], caption: "Frontend en desarrollo.",
+      rows: [
+        ["problema", "Un modelo de lenguaje lee muy bien una foto, pero puede equivocarse en un paso de la cuenta y explicarlo con total seguridad."],
+        ["decisión", "Separar responsabilidades: Gemini Vision solo lee la foto y la pasa a LaTeX; SymPy resuelve de forma exacta y el sistema explica el método aplicado."],
+        ["resultado", "Ejercicios resueltos paso a paso en español, con modo Profesor y modo Examen."],
+        ["stack", "Python · FastAPI · SymPy · OpenCV · React · Vite · Tailwind · Gemini API"],
+        ["links", ext("https://github.com/Brun02005/mathvision-ai", "código")]
+      ]
+    }
+  };
+  var ORDER = ["aym", "acceso", "bluedar", "waveload", "mathvision"];
+  var PROJECT_ALIAS = {
+    "aym": "aym", "aym-piscinas": "aym", "a&m": "aym", "piscinas": "aym",
+    "acceso": "acceso", "control-acceso": "acceso", "facial": "acceso", "control": "acceso",
+    "bluedar": "bluedar", "blue-dar": "bluedar", "bluetooth": "bluedar",
+    "waveload": "waveload", "wave": "waveload",
+    "mathvision": "mathvision", "math": "mathvision", "iamath": "mathvision"
+  };
+
+  function figure(srcs, caption) {
+    return '<figure data-src="' + srcs.join("|") + '"><img alt="' + esc(caption) + '" loading="lazy"><figcaption>' + caption + "</figcaption></figure>";
+  }
+  // Prueba las imágenes en orden y oculta la figura si ninguna existe.
+  function wireFigures(scope) {
+    scope.querySelectorAll("figure[data-src]").forEach(function (fig) {
+      var list = fig.getAttribute("data-src").split("|");
+      var img = fig.querySelector("img");
+      var i = 0;
+      img.onerror = function () { i++; if (i < list.length) img.src = list[i]; else fig.remove(); };
+      img.src = list[0];
+    });
+  }
+
+  var C = {};
+
+  C.help = function () {
+    block(rows([
+      [cmdLink("whoami"), "quién soy"],
+      [cmdLink("historia"), "de vender piscinas a programar"],
+      [cmdLink("proyectos"), "lo que construí"],
+      ['<span class="c">ver</span> <span class="dim">&lt;proyecto&gt;</span>', "el caso completo, ej: " + cmdLink("ver aym")],
+      [cmdLink("stack"), "tecnologías que uso"],
+      [cmdLink("experiencia"), "dónde trabajo"],
+      [cmdLink("formacion"), "estudios y cursos"],
+      [cmdLink("musica"), "mi lado DJ"],
+      [cmdLink("servicios"), "cómo te puedo ayudar"],
+      [cmdLink("contacto"), "hablemos"],
+      [cmdLink("simple"), "ver todo junto, sin comandos"],
+      [cmdLink("clear"), "limpiar la pantalla"]
+    ]) + '<div class="dim" style="margin-top:12px">Tab autocompleta · ↑ ↓ recorren el historial</div>');
+  };
+
+  C.whoami = function () {
+    block('<pre class="ascii" aria-hidden="true">' + ASCII + "</pre>" +
+      '<div><strong>Bruno Savarella</strong> <span class="dim">—</span> desarrollador Python &amp; JavaScript.</div>' +
+      "<div>Ciberseguridad, visión por computadora y desarrollo con IA.</div>" +
+      '<div class="dim">Córdoba, Argentina · Ing. en Sistemas (UTN) · Inglés B2</div>' +
+      hint(["historia", "proyectos", "contacto"]));
+  };
+
+  C.historia = function () {
+    block('<div class="h"># historia.md</div>' +
+      "<p>Siempre me gustó crear. Antes de escribir código ya armaba cosas: campañas, sets de música, formas nuevas de hacer lo de siempre.</p>" +
+      "<p>Empecé en ventas y marketing en A&amp;M Piscinas. Ahí aprendí lo más importante: escuchar. Cuando vi que el papel nos hacía perder clientes, construí mi primer sistema de verdad. Las ventas subieron un 10 % y entendí que programar era otra forma de crear.</p>" +
+      "<p>Hoy estudio Ingeniería en Sistemas en la UTN, me formo en ciberseguridad y construyo proyectos que juntan lo que me apasiona: diseño, música, seguridad e inteligencia artificial.</p>" +
+      "<p>Mi referente es <span class=\"a\">Steve Jobs</span>. No por los productos en sí, sino por su obsesión de unir la tecnología con lo humano y cuidar cada detalle, incluso los que nadie ve.</p>" +
+      '<div class="quote">"No podés unir los puntos mirando hacia adelante; solo podés unirlos mirando hacia atrás."<span class="dim">— Steve Jobs, Stanford, 2005</span></div>' +
+      "<p>Vender piscinas, mezclar música y programar parecían caminos distintos. Mirando hacia atrás, son los mismos puntos.</p>" +
+      hint(["proyectos", "musica"]));
+  };
+
+  C.proyectos = function () {
+    block('<div class="dim">total ' + ORDER.length + "</div>" + rows(ORDER.map(function (k) {
+      var p = PROJECTS[k];
+      return ['<span class="dim">drwxr-x</span> ' + cmdLink("ver " + k, p.dir + "/"), p.short];
+    })) + '<div class="dim" style="margin-top:12px">→ tocá un nombre o escribí <span class="c">ver aym</span></div>');
+  };
+
+  C.ver = function (arg) {
+    var key = PROJECT_ALIAS[(arg || "").toLowerCase().replace(/\/$/, "")];
+    if (!key) {
+      block((arg ? '<span class="r">no existe el proyecto: ' + esc(arg) + "</span><br>" : "") +
+        "Proyectos: " + ORDER.map(function (k) { return cmdLink("ver " + k, k); }).join(" · "));
+      return;
+    }
+    var p = PROJECTS[key];
+    var next = ORDER[(ORDER.indexOf(key) + 1) % ORDER.length];
+    var b = block('<div class="case-title"><strong>' + p.title + '</strong><span class="tag ' + p.tag[0] + '">' + p.tag[1] + "</span></div>" +
+      figure(p.img, p.caption) + rows(p.rows) + hint(["ver " + next, "proyectos"]));
+    wireFigures(b);
+  };
+
+  C.stack = function () {
+    block(rows([
+      ["lenguajes", "Python · JavaScript · SQL · HTML/CSS"],
+      ["backend", "FastAPI · Supabase · PostgreSQL · SQLite · Cloudflare Pages Functions"],
+      ["frontend", "React · Vite · Tailwind"],
+      ["visión e IA", "OpenCV · MediaPipe · InsightFace · Gemini API · SymPy"],
+      ["escritorio", "PySide6 (Qt)"],
+      ["calidad", "pytest · Git · GitHub Actions"],
+      ["con IA", "desarrollo con asistentes como Claude Code, revisando cada línea"]
+    ]));
+  };
+
+  C.experiencia = function () {
+    block(rows([
+      ['<span class="a">2026 — hoy</span>', "<strong>Analista de datos y desarrollo web</strong> · A&amp;M Piscinas<br><span class=\"dim\">Gestiono la información de la empresa, automatizo flujos de trabajo y desarrollé su plataforma web y su sistema de gestión.</span>"],
+      ['<span class="a">2024 — 2026</span>', "<strong>Director de ventas y marketing</strong> · A&amp;M Piscinas<br><span class=\"dim\">Atención al cliente y publicidad. Digitalicé la gestión de clientes que se llevaba en papel: ventas +10 %.</span>"]
+    ]));
+  };
+
+  C.formacion = function () {
+    block(rows([
+      ["UTN", "Ingeniería en Sistemas de Información <span class=\"dim\">· 2023 — en curso</span>"],
+      ["FAMAF — UNC", "Introducción a la Ciberseguridad <span class=\"dim\">· en curso</span>"],
+      ["IBM SkillsBuild", "Cybersecurity Fluency"],
+      ["Santander", "Python"],
+      ["idiomas", "Español nativo · Inglés B2"]
+    ]));
+  };
+
+  C.musica = function () {
+    block('<div class="h">♫ musica<span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></div>' +
+      "<p>Además de programar, mezclo música electrónica.</p>" +
+      "<p>WaveLoad nació ahí: tenía una biblioteca de casi 800 temas y ninguna herramienta que la organizara como yo quería. Así que la construí.</p>" +
+      "<p>Para mí, armar un set y diseñar software se parecen: elegir qué va con qué, cuidar las transiciones y pensar en quien está del otro lado.</p>" +
+      hint(["ver waveload", "historia"]));
+  };
+
+  C.servicios = function () {
+    block('<div class="dim" style="margin-bottom:8px">Para empresas, emprendedores y startups:</div>' + rows([
+      ['<span class="g">→</span> sitios y apps web', "de la landing al cotizador online"],
+      ['<span class="g">→</span> sistemas de gestión', "clientes, ventas, cobros y stock en un solo lugar"],
+      ['<span class="g">→</span> automatización con IA', "procesos repetitivos que se resuelven solos"],
+      ['<span class="g">→</span> seguridad desde el diseño', "permisos y datos personales protegidos desde el día uno"]
+    ]) + hint(["contacto"]));
+  };
+
+  C.contacto = function () {
+    block(rows([
+      ["email", '<a href="mailto:brunosavarella@gmail.com">brunosavarella@gmail.com</a>'],
+      ["linkedin", ext("https://www.linkedin.com/in/brunosavarella/", "linkedin.com/in/brunosavarella")],
+      ["github", ext("https://github.com/Brun02005", "github.com/Brun02005")],
+      ["ubicación", "Córdoba, Argentina · remoto"]
+    ]) + '<div class="dim" style="margin-top:12px">Te respondo a la brevedad.</div>');
+  };
+
+  C.simple = function () {
+    C.clear();
+    ["whoami", "historia"].forEach(function (c) { C[c](); });
+    ORDER.forEach(function (k) { C.ver(k); });
+    ["experiencia", "formacion", "stack", "musica", "servicios", "contacto"].forEach(function (c) { C[c](); });
+  };
+
+  C.clear = function () { out.innerHTML = ""; };
+  C.pwd = function () { block("/home/bruno"); };
+  C.date = function () { block(new Date().toLocaleString("es-AR", { timeZone: "America/Argentina/Cordoba", dateStyle: "full", timeStyle: "short" })); };
+  C.tema = function () { toggleTheme(); block('<span class="dim">tema: ' + currentTheme() + "</span>"); };
+
+  // Easter eggs
+  function egg(name, args) {
+    if (name === "sudo") return '<span class="r">bruno no está en el archivo sudoers.</span> Este incidente será reportado. 😉<br><span class="dim">Mínimo privilegio, siempre.</span>';
+    if (name === "rm" && /-rf/.test(args)) return '<span class="r">Permiso denegado.</span> <span class="dim">Los permisos viven en la base de datos, no en la interfaz.</span>';
+    if (name === "hack" || name === "hackear") return "Acceso denegado. Si te interesa la seguridad, probá " + cmdLink("ver bluedar") + ".";
+    if (name === "exit" || name === "logout") return "No hay salida… mejor " + cmdLink("contacto", "escribime") + ".";
+    if (name === "ping") return '<span class="g">pong</span> <span class="dim">· tiempo de respuesta: lo que tardes en escribirme</span>';
+    return null;
+  }
+
+  var ALIAS = { "ayuda": "help", "?": "help", "ls": "proyectos", "projects": "proyectos", "about": "whoami",
+    "cls": "clear", "cat": "ver", "cd": "ver", "open": "ver", "skills": "stack", "music": "musica", "música": "musica",
+    "dj": "musica", "formación": "formacion", "estudios": "formacion", "contact": "contacto", "trabajo": "experiencia",
+    "story": "historia", "theme": "tema" };
+
+  // ---------------- ejecución ----------------
+  var history = [], hIndex = 0;
+
+  function run(raw) {
+    var line = raw.trim();
+    var echo = block('<span class="ps1">bruno@cordoba:<span class="path">~</span>$</span> ' + esc(line), "echo");
+    if (!line) return;
+    history.push(line); hIndex = history.length;
+    var parts = line.split(/\s+/);
+    var name = parts[0].toLowerCase();
+    var args = parts.slice(1).join(" ");
+    var key = ALIAS[name] || name;
+    if (key === "proyectos" && args) key = "ver";   // "ls aym" funciona como "ver aym"
+    if (Object.prototype.hasOwnProperty.call(C, key)) {
+      C[key](args);
+    } else {
+      block(egg(name, args) || '<span class="r">comando no encontrado: ' + esc(parts[0]) + "</span> · escribí " + cmdLink("help"));
+    }
+    if (key === "clear" || key === "simple") { scrollTo(0, 0); return; }
+    var y = echo.getBoundingClientRect().top + scrollY - 52;
+    scrollTo({ top: y, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var v = input.value;
+    input.value = "";
+    run(v);
+  });
+
+  var COMMANDS = ["help", "whoami", "historia", "proyectos", "ver", "stack", "experiencia", "formacion", "musica", "servicios", "contacto", "simple", "clear", "tema"];
+  input.addEventListener("keydown", function (e) {
+    if (e.key === "ArrowUp" && history.length) {
+      e.preventDefault(); hIndex = Math.max(0, hIndex - 1); input.value = history[hIndex];
+    } else if (e.key === "ArrowDown" && history.length) {
+      e.preventDefault(); hIndex = Math.min(history.length, hIndex + 1); input.value = history[hIndex] || "";
+    } else if (e.key === "Tab") {
+      e.preventDefault();
+      var v = input.value.toLowerCase();
+      var m = v.match(/^(ver|cat|cd)\s+(\S*)$/);
+      var pool = m ? ORDER.map(function (k) { return m[1] + " " + k; }) : COMMANDS;
+      var hits = pool.filter(function (c) { return c.indexOf(v) === 0; });
+      if (hits.length === 1) input.value = hits[0] + (m ? "" : " ");
+      else if (hits.length > 1) block('<span class="dim">' + hits.join("   ") + "</span>");
+    } else if (e.key === "l" && e.ctrlKey) {
+      e.preventDefault(); C.clear();
+    }
+  });
+
+  document.addEventListener("click", function (e) {
+    var t = e.target.closest("[data-cmd]");
+    if (t) {
+      e.preventDefault();
+      run(t.getAttribute("data-cmd"));
+      if (!touch) input.focus({ preventScroll: true });
+      return;
+    }
+    // Click en la terminal = foco en la línea de comando (sin romper la selección de texto)
+    if (!touch && e.target.closest("main") && !e.target.closest("a") && !getSelection().toString()) {
+      input.focus({ preventScroll: true });
+    }
+  });
+
+  // ---------------- tema ----------------
+  function currentTheme() {
+    return root.getAttribute("data-theme") || (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+  }
+  function toggleTheme() {
+    var next = currentTheme() === "light" ? "dark" : "light";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("theme", next); } catch (e) {}
+  }
+  try { var saved = localStorage.getItem("theme"); if (saved) root.setAttribute("data-theme", saved); } catch (e) {}
+  document.getElementById("themeBtn").addEventListener("click", toggleTheme);
+
+  // ---------------- reloj (hora de Córdoba) ----------------
+  var clock = document.getElementById("clock");
+  function tick() {
+    clock.textContent = new Date().toLocaleTimeString("es-AR", { timeZone: "America/Argentina/Cordoba", hour: "2-digit", minute: "2-digit", hourCycle: "h23" });
+  }
+  tick(); setInterval(tick, 15000);
+
+  // ---------------- inicio ----------------
+  var last = new Date().toLocaleString("es-AR", { timeZone: "America/Argentina/Cordoba", weekday: "short", day: "2-digit", month: "short", hour: "2-digit", minute: "2-digit", hourCycle: "h23" });
+  block('<span class="dim">Último inicio de sesión: ' + esc(last) + " desde Córdoba, AR</span>");
+  // Links directos: brun02005.github.io/#ver-aym abre ese proyecto
+  var start = decodeURIComponent((location.hash || "").slice(1)).replace(/-/g, " ").trim();
+  run(/^[a-záéíóú ]{2,30}$/i.test(start) ? start : "whoami");
+  block('<span class="dim">Escribí </span>' + cmdLink("help") + '<span class="dim"> o tocá un comando de abajo.</span>');
+  scrollTo(0, 0);
+  if (!touch) input.focus({ preventScroll: true });
+})();
 </script>
 </body>
 </html>
